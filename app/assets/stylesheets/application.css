@@ -35,10 +35,21 @@
 
 .msg_box{
   width: 95vw;
-  height: 70vh;
+  height: 60vh;
   margin-left: auto;
   margin-right: auto;
   color: white;
   background-color: black;
   overflow: hidden scroll;
 }
+
+
+  input[type="text"]{
+    width: 94.5vw;
+    height: 7vh;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 14px;
+    background-color: black;
+  }
