@@ -44,11 +44,15 @@
 }
 
 .comment_form{
-    width: 94.5vw;
+    width: 95vw;
     height: 7vh;
     margin-left: auto;
     margin-right: auto;
     color: white;
     font-size: 14px;
     background-color: black;
+}
+
+.body{
+  -webkit-text-size-adjust: 100%;
 }
