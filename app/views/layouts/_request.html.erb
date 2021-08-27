@@ -1,0 +1,22 @@
+<%
+  request_id = "request_" + current_user.to_s
+%>
+
+<div id='<%= request_id %>'>
+  <% if current_user != nil %>
+    <table>
+      <tbody>
+        <% requests = Friend.where(friendid: current_user, request:true, allow:false) %>
+          <% if 0 < requests.length %>
+            <% requests.each do |request| %>
+              <tr>
+                <td><%= request.userid %> からフォロー申請が来ています</td>
+                <td><%= link_to 'フォロー申請許可', friends_edit_path(friendid:request.userid) %></td>
+                <td><%= link_to 'フォロー申請削除', friends_destroy_path(userid:request.userid, friendid:current_user, method: :delete) %></td>
+              </tr>
+            <% end %>
+          <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

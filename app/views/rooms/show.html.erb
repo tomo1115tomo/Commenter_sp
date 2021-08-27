@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<% if Room.find_by(id:params[:id], userid1:current_user) == nil && Room.find_by(id:params[:id], userid2:current_user) == nil %>
+  <p>不正なログインです</p>
+<% else %>
+  <%= link_to '<<フォロワー一覧', "/" %>
+
+  <br>
+  <br>
+  <%
+    sender, receiver = @room.userid1, @room.userid2
+    if sender != current_user
+      sender, receiver = receiver, sender
+    end
+    roomid = @room.id
+    room_id = "comments" + roomid.to_s + "_" + @room.userid1 + "_" + @room.userid2
+  %>
+
+  <div id="msg_box" class="msg_box">
+    <div id='<%= room_id%>' align="center">
+      <%= render @comments %>
+    </div>
+  </div>
+
+  <div id="form" align = "center">
+    <%= form_with(model: Comment.new()) do |form| %>
+      <%= form.hidden_field :senderid, :value => sender %>
+      <%= form.hidden_field :receiverid, :value => receiver %>
+      <%= form.hidden_field :roomid, :value => roomid %>
+
+        <%= form.text_field :content, :size=>"80x15", data: { behavior: 'room_speaker' }%>
+        <%= form.submit "送信" %>
+    <% end %>
+  </div>
+<% end %>

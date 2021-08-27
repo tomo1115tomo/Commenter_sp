@@ -1,0 +1,40 @@
+<%
+  submitted_time = ""
+  if (comment.created_at.hour + 9) % 24 < 10
+    submitted_time += "0"
+  end
+  submitted_time += ((comment.created_at.hour + 9) % 24).to_s + ":"
+  if comment.created_at.min < 10
+    submitted_time += "0"
+  end
+  submitted_time += comment.created_at.min.to_s
+%>
+
+<p>
+  <% sender = User.find_by(userid:comment.senderid) %>
+  <% receiver = User.find_by(userid:comment.receiverid) %>
+
+  <% if current_user == sender.userid %>
+    <div align = "right">
+      <big><strong><%= comment.content %></strong></big><small><%= " " + submitted_time %></small>
+      <% if sender.image.attached? %>
+        <%= image_tag sender.image, :class => "room_icons" %>
+      <% else %>
+        <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+      <% end %>
+    </div>
+  <% else %>
+    <div align = "left">
+      <% if 4 < Time.now - comment.created_at %>
+        <% if sender.image.attached? %>
+          <%= image_tag sender.image, :class => "room_icons", onerror: 'this.src="新着_デフォルト.png"; this.error=null;' %>
+        <% else %>
+          <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+        <% end %>
+      <% else %>
+        <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
+      <% end %>
+      <big><strong><%= comment.content %></strong></big><small><%= " " + submitted_time %></small>
+    </div>
+  <% end %>
+</p>

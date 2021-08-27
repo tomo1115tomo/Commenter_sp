@@ -1,0 +1,18 @@
+<%= form_with(scope: :session) do |form| %>
+
+  <div class="field">
+    <%= form.label :userid %>
+    <%= form.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <p><%= link_to('新規登録', '/users/new') %></p>
+<% end %>

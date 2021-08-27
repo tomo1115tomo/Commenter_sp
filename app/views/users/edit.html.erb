@@ -1,0 +1,9 @@
+<h1>ユーザー情報編集</h1>
+
+<% if User.find_by(id:params[:id], userid:current_user) == nil %>
+  <p>不正なログインです</p>
+<% else %>
+  <%= render 'edit_form', user: @user %>
+<% end %>
+
+<%= link_to 'Back', users_path %>

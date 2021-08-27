@@ -1,0 +1,13 @@
+ja:
+    activerecord:
+        attributes:
+            user:
+              name: 名前
+              userid: ユーザーID
+              password: パスワード
+              password_confirmation: パスワード(再確認)
+
+        attributes:
+            session:
+              userid: ユーザーID
+              password: パスワード

@@ -1,0 +1,44 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+.index_icons{
+    width:  75px;       /* ※縦横を同値に */
+    height: 75px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    background-position: center center;
+}
+
+.room_icons{
+    width:  30px;       /* ※縦横を同値に */
+    height: 30px;       /* ※縦横を同値に */
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    background-position: center center;
+}
+
+.roomnew_icons{
+    width:  30px;       /* ※縦横を同値に */
+    height: 30px;       /* ※縦横を同値に */
+    background-position: center center;
+}
+
+.msg_box{
+  width: 95vw;
+  height: 70vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: black;
+  overflow: hidden scroll;
+}

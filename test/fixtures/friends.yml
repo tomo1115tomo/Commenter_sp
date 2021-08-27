@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userid: MyString
+  friendid: MyString
+  request: false
+  allow: false
+  roomid: 1
+
+two:
+  userid: MyString
+  friendid: MyString
+  request: false
+  allow: false
+  roomid: 1

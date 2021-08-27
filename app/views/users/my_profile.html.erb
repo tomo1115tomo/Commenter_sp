@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= User.column_names[1] %></strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong><%= User.column_names[2] %></strong>
+  <%= @user.userid %>
+</p>
+
+<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
