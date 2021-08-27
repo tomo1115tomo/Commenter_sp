@@ -43,8 +43,7 @@
   overflow: hidden scroll;
 }
 
-
-  input[type="text"]{
+.comment_form{
     width: 94.5vw;
     height: 7vh;
     margin-left: auto;
@@ -52,4 +51,4 @@
     color: white;
     font-size: 14px;
     background-color: black;
-  }
+}

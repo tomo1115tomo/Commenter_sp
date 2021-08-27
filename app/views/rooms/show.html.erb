@@ -28,8 +28,8 @@
       <%= form.hidden_field :receiverid, :value => receiver %>
       <%= form.hidden_field :roomid, :value => roomid %>
 
-        <div class="form">
-          <%= form.text_field :content, data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %>
+        <div class="comment_form">
+          <%= form.text_field :content, class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %>
           <%= form.submit "送信" %>
         </div>
 
