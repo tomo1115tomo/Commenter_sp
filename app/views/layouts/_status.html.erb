@@ -5,17 +5,14 @@
 <div id='<%= status_id %>'>
   <% if current_user != nil %>
     <h3>
-      ようこそ
       <% if User.find_by(userid:current_user).image.attached? %>
         <%= image_tag User.find_by(userid:current_user).image, :class => "room_icons" %>
       <% else %>
         <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
       <% end %>
+      <%= link_to current_user, "/users/my_profile/#{User.find_by(userid: current_user).id}"%> としてログインしています
 
-      <%= current_user %> さん =>
-      <%= link_to('ログアウト', logout_path, method: :delete) %>
-      <%= link_to('マイプロフィール', "/users/my_profile/#{User.find_by(userid: current_user).id}") %>
-    </h3><br>
+    </h3>
   <% else %>
     <h3>ようこそ ゲスト さん => <%= link_to('ログイン', '/login') %></h3><br>
   <% end %>

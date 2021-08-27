@@ -4,7 +4,7 @@
   <% if Room.find_by(id:params[:id], userid1:current_user) == nil && Room.find_by(id:params[:id], userid2:current_user) == nil %>
     <p>不正なログインです</p>
   <% else %>
-    <%= link_to '<<フォロワー一覧', "/" %>
+    <%= link_to '<<<_______戻る_________', "/" %>
 
     <br>
     <br>

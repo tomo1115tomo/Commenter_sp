@@ -13,12 +13,13 @@
   <header>
     <%= render 'layouts/status' %>
   </header>
+
   <body>
-    <%= render 'layouts/request' %>
-    <%= render 'layouts/news' %>
-    <br>
-
-
+    <h4><%= current_user + " さんへのNews"%></h4>
+    <div class="news">
+      <%= render 'layouts/request' %>
+      <%= render 'layouts/news' %>
+    </div>
     <%= yield %>
   </body>
 </html>
