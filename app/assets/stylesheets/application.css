@@ -34,10 +34,21 @@
 }
 
 .msg_box{
-  width: 95vw;
+  width: 46vw;
+  height: 55vh;
+  margin-left: 0;
+  margin-right: auto;
+  color: white;
+  background-color: black;
+  overflow: hidden scroll;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+}
+
+.msg_box_second{
+  width: 46vw;
   height: 55vh;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 0;
   color: white;
   background-color: black;
   overflow: hidden scroll;
@@ -77,6 +88,11 @@
 .right_msg{
   text-align: right;
   margin-right: 10px;
+}
+
+input[type=text] {
+  font-size: 16px;
+  transform: scale(0.8);
 }
 
 a{

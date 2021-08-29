@@ -1,34 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<center>
-  <table>
+
+  <table style="float:left">
     <tbody>
       <tr>
-        <td>
-            <table>
-              <tbody>
-                <tr>
-                  <td valign="bottom">名前</td>
-                  <td valign="bottom"><big><strong><%= @user.name %></strong></big></td>
-                </tr>
+        <td valign="bottom">名前</td>
+        <td valign="bottom"><big><strong><%= @user.name %></strong></big></td>
+      </tr>
 
-                <tr>
-                  <td valign="bottom">ユーザーID</td>
-                  <td valign="bottom"><big><strong><%= @user.userid %></strong></big></td>
-                </tr>
-              </tbody>
-            </table>
-        </td>
-
-        <td>
-            <ul>
-              <p><li><%= link_to '________ログアウト__>>>', logout_path, method: :delete %></li></p>
-              <p><li><%= link_to '_____ユーザー情報編集 >>>', edit_user_path(@user) %></li></p>
-              <p><li><%= link_to '>>>__アカウント削除__<<<', @user, method: :delete, data: { confirm: 'このアカウントは元に戻せません、よろしいですか？' } %></li></p>
-              <p><li><%= link_to '<<<_______戻る_________', users_path %></li></p>
-            </ul>
-        </td>
+      <tr>
+        <td valign="bottom">ユーザーID</td>
+        <td valign="bottom"><big><strong><%= @user.userid %></strong></big></td>
       </tr>
     </tbody>
   </table>
-</center>
+
+  <ul style="float:left">
+    <p><li><%= link_to '________ログアウト__>>>', logout_path, method: :delete %></li></p>
+    <p><li><%= link_to '_____ユーザー情報編集 >>>', edit_user_path(@user) %></li></p>
+    <p><li><%= link_to '>>>__アカウント削除__<<<', @user, method: :delete, data: { confirm: 'このアカウントは元に戻せません、よろしいですか？' } %></li></p>
+    <p><li><%= link_to '<<<_______戻る_________', users_path %></li></p>
+  </ul>

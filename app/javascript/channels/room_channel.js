@@ -22,7 +22,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
     const comments = document.getElementById(room_id);
     comments.insertAdjacentHTML('beforeend', data['comment']);
 
-    var msg_area = document.getElementById('msg_box');
+    const msg_area = document.getElementById('msg_box');
     msg_area.scrollTop = msg_area.scrollHeight;
   },
 

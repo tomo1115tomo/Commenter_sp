@@ -17,8 +17,14 @@
       room_id = "comments" + roomid.to_s + "_" + @room.userid1 + "_" + @room.userid2
     %>
 
-    <div id="msg_box" class="msg_box">
-      <div id='<%= room_id%>' align="center">
+    <div id="msg_box" style="float:left;" class="msg_box">
+      <div id='<%= room_id%>'>
+        <%= render @comments %>
+      </div>
+    </div>
+
+    <div style="float:right;" class="msg_box_second">
+      <div id='<%= room_id%>'>
         <%= render @comments %>
       </div>
     </div>
