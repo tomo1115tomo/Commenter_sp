@@ -90,7 +90,6 @@ a:visited{
 body{
   background-color: black;
   color: white;
-  -webkit-text-size-adjust: 100%;
 }
 
 ul {
@@ -98,8 +97,14 @@ ul {
 }
 
 @media only screen and (max-width: 600px) {
-  html{
-    font-size: 7px;
+  .comment_form{
+      width: 95vw;
+      height: 7vh;
+      margin-left: auto;
+      margin-right: auto;
+      color: red;
+      font-size: 6px;
+      background-color: black;
   }
 
 }
