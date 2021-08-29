@@ -15,16 +15,18 @@
   <% receiver = User.find_by(userid:comment.receiverid) %>
 
   <% if current_user == sender.userid %>
-    <div align = "right">
-      <big><strong><%= comment.content %></strong></big><small><%= " " + submitted_time %></small>
+    <div class="right_msg">
+      <big><strong><%= comment.content %></strong></big>
+      <small class="time"><%= " " + submitted_time %></small>
       <% if sender.image.attached? %>
         <%= image_tag sender.image, :class => "room_icons" %>
       <% else %>
         <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
       <% end %>
     </div>
+
   <% else %>
-    <div align = "left">
+    <div class="left_msg">
       <% if 4 < Time.now - comment.created_at %>
         <% if sender.image.attached? %>
           <%= image_tag sender.image, :class => "room_icons", onerror: 'this.src="新着_デフォルト.png"; this.error=null;' %>
@@ -34,7 +36,9 @@
       <% else %>
         <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
       <% end %>
-      <big><strong><%= comment.content %></strong></big><small><%= " " + submitted_time %></small>
+
+        <big><strong><%= comment.content %></strong></big>
+        <small class="time"><%= " " + submitted_time %></small>
     </div>
   <% end %>
 </p>

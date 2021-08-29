@@ -41,6 +41,11 @@
   color: white;
   background-color: black;
   overflow: hidden scroll;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+}
+
+.time{
+  color: gray
 }
 
 .news{
@@ -51,6 +56,7 @@
   color: white;
   background-color: black;
   overflow: hidden scroll;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
 }
 
 .comment_form{
@@ -61,6 +67,16 @@
     color: white;
     font-size: 14px;
     background-color: black;
+}
+
+.left_msg{
+  text-align: left;
+  margin-left: 10px;
+}
+
+.right_msg{
+  text-align: right;
+  margin-right: 10px;
 }
 
 a{
@@ -79,4 +95,11 @@ body{
 
 ul {
   list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  html{
+    font-size: 7px;
+  }
+
 }
