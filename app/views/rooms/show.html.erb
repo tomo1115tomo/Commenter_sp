@@ -16,7 +16,7 @@
 
     if(room1 == nil && room2 == nil)
   %>
-    <% redirect_to users_path %>
+    <% redirect_to "/users" %>
   <% elsif (friend11 != nil && friend12 != nil) || (friend21 != nil && friend22 != nil) %>
 
   <%
@@ -49,6 +49,6 @@
   </div>
 
   <% else %>
-    <% redirect_to users_path %>
+    <% redirect_to "/users" %>
   <% end %>
 </body>

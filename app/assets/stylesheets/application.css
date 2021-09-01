@@ -202,10 +202,10 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   font-size: 12px;
-  line-height: 35px;
+  line-height: 25px;
   text-align: center;
 }
 .followed_link:hover{
@@ -223,10 +223,10 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   font-size: 12px;
-  line-height: 35px;
+  line-height: 25px;
   text-align: center;
 }
 .following_link:hover{
@@ -244,10 +244,10 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   font-size: 12px;
-  line-height: 35px;
+  line-height: 25px;
   text-align: center;
 }
 .followback_link:hover{
@@ -265,10 +265,10 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   font-size: 12px;
-  line-height: 35px;
+  line-height: 25px;
   text-align: center;
 }
 .follow_link:hover{
@@ -286,10 +286,10 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 20px;
-  width: 120px;
+  height: 25px;
+  width: 100px;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: center;
 }
 .follow_allow_link:hover{
@@ -362,7 +362,7 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   font-size: 12px;
 }
@@ -382,7 +382,7 @@ ul {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  height: 35px;
+  height: 25px;
   width: 100px;
   font-size: 12px;
 }
