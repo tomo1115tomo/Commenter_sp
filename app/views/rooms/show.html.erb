@@ -16,7 +16,8 @@
 
     if(room1 == nil && room2 == nil)
   %>
-    <% redirect_to "/users" %>
+    <center><h2>申し訳ありません　このページは表示できません…  </h2></center>
+    <center><%= link_to "トップへ戻る", users_path %></center>
   <% elsif (friend11 != nil && friend12 != nil) || (friend21 != nil && friend22 != nil) %>
 
   <%
@@ -49,6 +50,7 @@
   </div>
 
   <% else %>
-    <% redirect_to "/users" %>
+    <center><h2>申し訳ありません　このページは表示できません…  </h2></center>
+    <center><%= link_to "トップへ戻る", users_path %></center>
   <% end %>
 </body>
