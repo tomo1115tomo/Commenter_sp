@@ -2,9 +2,6 @@ class RoomsController < ApplicationController
   before_action :set_room, only: %i[ show edit update destroy ]
 
   # GET /rooms or /rooms.json
-  def index
-    @rooms = Room.all
-  end
 
   # GET /rooms/1 or /rooms/1.json
   def show
@@ -20,13 +17,17 @@ class RoomsController < ApplicationController
 
   # POST /rooms or /rooms.json
   def create
-    @room = Room.new(room_params)
-    user1, user2 = @room.userid1, @room.userid2
+    user1 = User.find_by(userid:room_params[:userid1])
+    user2 = User.find_by(userid:room_params[:userid2])
 
-    if Room.find_by(userid1:user1, userid2:user2) == nil
+    if Room.find_by(userid1:user1.userid, userid2:user2.userid, user_id1:user1.id, user_id2:user2.id) == nil
+      @room = Room.new(room_params)
       @room.save
+      redirect_to "/rooms/#{@room.id}"
+    else
+      roomid = Room.find_by(userid1:user1.userid, userid2:user2.userid, user_id1:user1.id, user_id2:user2.id).id
+      redirect_to "/rooms/#{roomid}"
     end
-    redirect_to "/rooms/#{@room.id}"
   end
 
   # PATCH/PUT /rooms/1 or /rooms/1.json
@@ -59,6 +60,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.permit(:userid1, :userid2)
+      params.permit(:userid1, :userid2, :user_id1, :user_id2)
     end
 end

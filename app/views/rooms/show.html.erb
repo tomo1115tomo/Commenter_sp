@@ -2,8 +2,9 @@
 
 <body class="body">
   <%
-    room1 = Room.find_by(id:params[:id], userid1:current_user)
-    room2 = Room.find_by(id:params[:id], userid2:current_user)
+    @current_user = User.find_by(userid:current_user)
+    room1 = Room.find_by(id:params[:id], userid1:current_user, user_id1:@current_user.id)
+    room2 = Room.find_by(id:params[:id], userid2:current_user, user_id2:@current_user.id)
     friend11, friend12, friend21, friend22 = nil, nil, nil, nil
 
     if room1 != nil
