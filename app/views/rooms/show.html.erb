@@ -16,7 +16,7 @@
 
     if(room1 == nil && room2 == nil)
   %>
-    <p>不正なログインです</p>
+    <% redirect_to users_path %>
   <% elsif (friend11 != nil && friend12 != nil) || (friend21 != nil && friend22 != nil) %>
 
   <%
@@ -49,6 +49,6 @@
   </div>
 
   <% else %>
-    <p>不正なログインです</p>
+    <% redirect_to users_path %>
   <% end %>
 </body>
