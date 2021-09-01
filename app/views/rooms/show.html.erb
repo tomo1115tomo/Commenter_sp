@@ -1,46 +1,54 @@
 <p id="notice"><%= notice %></p>
 
 <body class="body">
-  <% if Room.find_by(id:params[:id], userid1:current_user) == nil && Room.find_by(id:params[:id], userid2:current_user) == nil %>
+  <%
+    room1 = Room.find_by(id:params[:id], userid1:current_user)
+    room2 = Room.find_by(id:params[:id], userid2:current_user)
+    friend11, friend12, friend21, friend22 = nil, nil, nil, nil
+
+    if room1 != nil
+      friend11 = Friend.find_by(userid:room1.userid2, friendid:current_user, allow:true)
+      friend12 = Friend.find_by(userid:current_user, friendid:room1.userid2, allow:true)
+    elsif room2 != nil
+      friend21 = Friend.find_by(userid:room2.userid1, friendid:current_user, allow:true)
+      friend22 = Friend.find_by(userid:current_user, friendid:room2.userid1, allow:true)
+    end
+
+    if(room1 == nil && room2 == nil)
+  %>
     <p>不正なログインです</p>
+  <% elsif (friend11 != nil && friend12 != nil) || (friend21 != nil && friend22 != nil) %>
+
+  <%
+    sender, receiver = @room.userid1, @room.userid2
+    if sender != current_user
+      sender, receiver = receiver, sender
+    end
+    roomid = @room.id
+    room_id = "comments" + roomid.to_s + "_" + @room.userid1 + "_" + @room.userid2
+  %>
+
+  <div id="msg_box" class="msg_box">
+    <div id='<%= room_id%>'>
+      <%= render @comments %>
+    </div>
+  </div>
+
+  <div id="form" align = "center">
+    <%= form_with(model: Comment.new()) do |form| %>
+      <%= form.hidden_field :senderid, :value => sender %>
+      <%= form.hidden_field :receiverid, :value => receiver %>
+      <%= form.hidden_field :roomid, :value => roomid %>
+
+      <div class="comment_form">
+        <%= form.text_field :content, class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %>
+        <% form.submit "送信" %>
+      </div>
+
+    <% end %>
+  </div>
+
   <% else %>
-    <%= link_to '<<<_______戻る_________', "/" %>
-
-    <br>
-    <br>
-    <%
-      sender, receiver = @room.userid1, @room.userid2
-      if sender != current_user
-        sender, receiver = receiver, sender
-      end
-      roomid = @room.id
-      room_id = "comments" + roomid.to_s + "_" + @room.userid1 + "_" + @room.userid2
-    %>
-
-    <div id="msg_box" style="float:left;" class="msg_box">
-      <div id='<%= room_id%>'>
-        <%= render @comments %>
-      </div>
-    </div>
-
-    <div style="float:right;" class="msg_box_second">
-      <div id='<%= room_id%>'>
-        <%= render @comments %>
-      </div>
-    </div>
-
-    <div id="form" align = "center">
-      <%= form_with(model: Comment.new()) do |form| %>
-        <%= form.hidden_field :senderid, :value => sender %>
-        <%= form.hidden_field :receiverid, :value => receiver %>
-        <%= form.hidden_field :roomid, :value => roomid %>
-
-          <div class="comment_form">
-            <%= form.text_field :content, class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %>
-            <% form.submit "送信" %>
-          </div>
-
-      <% end %>
-    </div>
+    <p>不正なログインです</p>
   <% end %>
 </body>

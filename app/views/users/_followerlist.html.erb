@@ -1,0 +1,89 @@
+<table>
+  <tbody>
+    <% @users.each_with_index do |friend| %>
+      <% if friend.userid != current_user %>
+        <tr class="index_row">
+          <%
+            @current_user = User.find_by(userid:current_user)
+            @judge_result = judge_ff(current_user, friend.userid)
+            @follow = (@judge_result - @judge_result % 10) / 10
+            @follower = @judge_result % 10
+          %>
+          <td class="ff_image">
+            <% if @judge_result == 22 %>
+              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 21 %>
+              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 20 %>
+              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 12 %>
+              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 11 %>
+              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 10 %>
+              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 2 %>
+              <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 1 %>
+              <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
+            <% elsif @judge_result == 0 %>
+              <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
+            <% end %>
+          </td>
+
+
+          <td>
+              <% if friend.image.attached? %>
+                <%= image_tag friend.image, :class => "index_icons", style:"float:left" %>
+              <% else %>
+                <%= image_tag "人物_デフォルト.png", :class => "index_icons", style:"float:left" %>
+              <% end %>
+          </td>
+
+          <td><%= link_to friend.userid, friend, class:"follower_name", style:"float:right" %></td>
+
+          <td>
+            <% if @follow == 2 %>
+              <div class="followed_link">
+                <%= link_to 'フォロー解除', friends_edit2_path(userid: current_user, friendid:friend.userid), method: :get %>
+              </div>
+            <% elsif @follow == 1 %>
+              <div class="following_link">
+                <%= link_to 'フォロー申請中', friends_edit2_path(userid: current_user, friendid:friend.userid), method: :get %>
+              </div>
+            <% elsif @judge_result == 2 %>
+              <div class="followback_link">
+                <%= link_to "フォローバック", friends_create_path(friendid:friend.userid) %>
+              </div>
+            <% elsif @judge_result == 1 || @judge_result == 0 %>
+              <div class="follow_link">
+                <%= link_to "フォロー申請", friends_create_path(friendid:friend.userid) %>
+              </div>
+            <% end %>
+          </td>
+
+          <% if @judge_result == 22 %>
+          <%
+            if current_user < friend.userid
+              @user1, @user2 = current_user, friend.userid
+            else
+              @user1, @user2 = friend.userid, current_user
+            end
+
+            @room = Room.find_by(userid1:@user1, userid2:@user2)
+            if @room == nil
+          %>
+
+            <td><%= button_to 'ルーム作成', rooms_create_path(userid1: @user1, userid2: @user2), method: :post, class:"roomMake_link" %></td>
+          <% else %>
+            <td><%= button_to 'ルーム入室', "/rooms/#{@room.id}", method: :get, class:"roomEntry_link" %></td>
+          <% end %>
+        <% else %>
+          <td class="roomEmpty"> </td>
+        <% end %>
+        </tr>
+      <% end %>
+
+    <% end %>
+  </tbody>
+</table>

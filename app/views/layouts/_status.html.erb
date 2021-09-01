@@ -10,10 +10,12 @@
       <% else %>
         <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
       <% end %>
-      <%= link_to current_user, "/users/my_profile/#{User.find_by(userid: current_user).id}"%> としてログインしています
+      <%= link_to current_user, "/users" %> としてログインしています
 
     </h3>
   <% else %>
     <h3>ようこそ ゲスト さん => <%= link_to('ログイン', '/login') %></h3><br>
   <% end %>
+
+  <input type="hidden" id="current_user_variable" value="<%= current_user %>">
 </div>

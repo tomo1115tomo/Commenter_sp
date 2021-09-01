@@ -1,114 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h3>ユーザー</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>ユーザーID</th>
-      <th>フォロー</th>
-      <th>フォロー関係１</th>
-      <th>フォロー関係２</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |friend| %>
-      <% flag = 0 %>
-      <% if friend.userid != current_user %>
-        <tr>
-          <td>
-            <% if friend.image.attached? %>
-              <%= image_tag friend.image, :class => "index_icons" %>
-            <% else %>
-              <%= image_tag "人物_デフォルト.png", :class => "index_icons" %>
-            <% end %>
-          </td>
-          <td><%= link_to friend.userid, friend %></td>
-
-            <% follower =  Friend.find_by(userid: current_user, friendid: friend.userid) %>
-            <% follow = Friend.find_by(userid: friend.userid, friendid: current_user) %>
-
-            <% if follower&.friendid == friend.userid %>
-              <td>
-                <% if Friend.find_by(userid:current_user, friendid:friend.userid, request:true, allow:false) != nil %>
-                  <%= link_to 'フォロー申請中', friends_destroy_path(userid: current_user, friendid:friend.userid, method: :delete) %>
-                <% else %>
-                  <%= link_to 'フォロー解除', friends_destroy_path(userid: current_user, friendid:friend.userid, method: :delete) %>
-                  <%
-                      if Friend.find_by(userid:current_user, friendid:friend.userid, allow:true) && Friend.find_by(userid:friend.userid, friendid:current_user, allow:true)
-                        flag = 1
-                      end
-                  %>
-                <% end %>
-              </td>
-
-            <% else %>
-              <td>
-                <% if follow&.userid == friend.userid %>
-                  <%= link_to 'フォローバックする', friends_create_path(friendid:friend.userid) %>
-                <% else %>
-                  <%= link_to 'フォロー申請', friends_create_path(friendid:friend.userid) %>
-                <% end %>
-              </td>
-            <% end %>
+<% @current_user = User.find_by(userid:current_user) %>
+<span class="myprofile" style="float:left">
+  <%= render '/users/myprofile_left' %>
+</span>
 
 
 
-            <td>
-              <% if follower&.friendid == friend.userid %>
-                  <% if Friend.find_by(userid:current_user, friendid:friend.userid)&.allow %>
-                    <%= current_user + " >>>>> " + friend.userid %>
-                  <% else %>
-                  <%= current_user + " >>--- " + friend.userid %>
-                  <% end %>
-
-              <% else %>
-                <%= current_user + " ----- " + friend.userid %>
-              <% end %>
-            </td>
-
-
-            <td>
-              <% if follow&.userid == friend.userid %>
-                <% if Friend.find_by(userid:friend.userid, friendid:current_user)&.allow %>
-                  <%= friend.userid + " >>>>> " + current_user %>
-                <% else %>
-                  <%= friend.userid + " >>--- " + current_user %>
-                <% end %>
-              <% else %>
-                <%= friend.userid + " ----- " + current_user %>
-              <% end %>
-            </td>
-
-            <% if flag == 1 %>
-              <%
-                if current_user < friend.userid
-                  @user1 = current_user
-                  @user2 = friend.userid
-                else
-                  @user1 = friend.userid
-                  @user2 = current_user
-                end
-              %>
-
-              <%
-                @room = Room.find_by(userid1:@user1, userid2:@user2)
-                if @room == nil
-              %>
-                <td><%= link_to 'ルーム作成', rooms_create_path(userid1: @user1, userid2: @user2) %></td>
-              <% else %>
-                <td><%= link_to 'ルーム入室', "/rooms/#{@room.id}" %></td>
-              <% end %>
-
-            <% end %>
-
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="followerlist" style="float:right" >
+  <%= render '/users/followerlist' %>
+</div>

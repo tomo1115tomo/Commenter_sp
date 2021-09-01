@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <td class="myprofile_area1"><%= "名前"%></td>
+    <td class="myprofile_area2"><big><strong><%= @current_user.name %></strong></big></td>
+  </tr>
+
+  <tr>
+    <td class="myprofile_area1"><%= "ユーザーID" %></td>
+    <td class="myprofile_area2"><big><strong><%= @current_user.userid %></strong></big></td>
+  </tr>
+</table>
+
+<div style="float:left">
+  <%= button_to 'ログアウト', logout_path, method: :delete, class: 'user_btn logout_link' %>
+</div>
+
+<div style="float:left">&emsp;</div>
+
+<div style="float:left">
+  <%= button_to 'ユーザー情報編集', edit_user_path(@current_user), method: :get, class: 'user_btn edit_link' %>
+</div>
+
+<div style="float:left">&emsp;</div>
+
+<div style="float:left">
+  <%= button_to 'アカウント削除', @current_user, method: :delete, class: 'user_btn destroy_link', data: { confirm: 'このアカウントは元に戻せません、よろしいですか？' } %>
+</div>

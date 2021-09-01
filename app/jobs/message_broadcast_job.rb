@@ -6,6 +6,9 @@ class MessageBroadcastJob < ApplicationJob
     ActionCable.server.broadcast 'news_channel', news: render_message2(comment), roomid: comment.roomid, senderid:comment.senderid, receiverid:comment.receiverid
   end
 
+
+
+
   private
   def render_message(comment)
     ApplicationController.renderer.render(partial: 'comments/comment', locals: { comment: comment })

@@ -38,3 +38,9 @@ window.addEventListener('keypress', function(e) {
     e.preventDefault();
   }
 });
+
+
+window.addEventListener('load', function() {
+  const msg_area = document.getElementById('msg_box');
+  msg_area.scrollTop = msg_area.scrollHeight;
+});
