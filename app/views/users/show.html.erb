@@ -1,57 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<% if @user.userid != current_user %>
-  <p>
-    <strong><%= User.column_names[1] %></strong>
-    <%= @user.name %>
-  </p>
+<div class="myprofile" style="float:left" >
+  <%= render '/users/show_myprofile' %>
+</div>
 
-  <p>
-    <strong><%= User.column_names[2] %></strong>
-    <%= @user.userid %>
-  </p>
-  <br>
-
-  <% follower =  Friend.find_by(userid: current_user, friendid: @user.userid) %>
-  <% follow = Friend.find_by(userid: @user.userid, friendid: current_user) %>
-
-  <% if follower&.friendid == @user.userid %>
-      <% if Friend.find_by(userid:current_user, friendid:@user.userid)&.allow %>
-        <%= current_user + " >>>>> " + @user.userid %>
-      <% else %>
-      <%= current_user + " >>--- " + @user.userid %>
-      <% end %>
-
-  <% else %>
-    <%= current_user + " ----- " + @user.userid %>
-  <% end %>
-
-
-  <% if follow&.userid == @user.userid %>
-    <% if Friend.find_by(userid:@user.userid, friendid:current_user)&.allow %>
-      <%= @user.userid + " >>>>> " + current_user %>
-    <% else %>
-      <%= @user.userid + " >>--- " + current_user %>
-    <% end %>
-  <% else %>
-    <%= @user.userid + " ----- " + current_user %>
-  <% end %><br>
-
-
-  <% if follower&.friendid == @user.userid %>
-      <% if Friend.find_by(userid:current_user, friendid:@user.userid, request:true, allow:false) != nil %>
-        <%= link_to 'フォロー申請中', friends_destroy_path(userid: current_user, friendid:@user.userid, method: :delete) %>
-      <% else %>
-        <%= link_to 'フォロー解除(フォローしている)', friends_destroy_path(userid: current_user, friendid:@user.userid, method: :delete) %>
-      <% end %>
-
-  <% else %>
-      <% if follow&.userid == @user.userid %>
-        <%= link_to 'フォローバックする', friends_create_path(friendid:@user.userid) %>
-      <% else %>
-        <%= link_to 'フォロー申請', friends_create_path(friendid:@user.userid) %>
-      <% end %>
-  <% end %><br>
-
-<% end %>
-<%= link_to 'Back', users_path %>
+<div class="followerlist" style="float:right" >
+  <%= render '/users/show_followerlist' %>
+</div>

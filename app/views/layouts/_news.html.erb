@@ -2,5 +2,18 @@
   news_id = "news_" + current_user.to_s
 %>
 
-<div id='<%= news_id %>'>
-</div>
+<% if current_user != nil %>
+  <div id='<%= news_id %>'>
+  </div>
+<% else %>
+  <div>
+    まずは
+    <big><strong><%= link_to "ログイン", login_path, class:"top_login_link" %></strong></big>
+     か
+    <big><strong><%= link_to "新規登録", '/users/new', class:"top_create_link" %></strong></big> してください
+  </div>
+
+  <div>
+
+  </div>
+<% end %>

@@ -1,18 +1,27 @@
 <%= form_with(scope: :session) do |form| %>
 
-  <div class="field">
-    <%= form.label :userid %>
-    <%= form.text_field :userid %>
-  </div>
+<br>
+<br>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+  <center>
+    <table>
+      <tbody>
+        <tr>
+          <td><%= form.text_field :userid, class:"session_login_field", id:"session_login_userid", placeholder: "ユーザーID", tabindex:"1" %></td>
+          <td rowspan="2">&emsp;&emsp;&emsp;<%= form.submit "ログイン", class:"session_login_submit", tabindex:"3" %></td>
+        </tr>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+        <tr>
+          <td><%= form.password_field :password, class:"session_login_field", placeholder: "パスワード", tabindex:"2" %></td>
+        </tr>
+      </tbody>
+    </table>
 
-  <p><%= link_to('新規登録', '/users/new') %></p>
+  </center>
 <% end %>
+
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    document.getElementById('session_login_userid').focus();
+  })
+</script>

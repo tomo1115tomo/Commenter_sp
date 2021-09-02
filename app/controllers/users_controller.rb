@@ -7,7 +7,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id:params[:id])
+    if User.find_by(id:params[:id]) != nil
+      @user = User.find(params[:id])
+    else
+      @user = nil
+    end
+    @users = User.all
   end
 
   # GET /users/new
@@ -19,8 +24,13 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def my_profile
-    @user = User.find_by(userid:current_user)
+  def search
+    @q = User.ransack(params[:q])
+    if params[:q] != nil
+      @results = @q.result
+    else
+      @results = User.all.shuffle
+    end
   end
 
   # POST /users or /users.json
@@ -42,16 +52,10 @@ class UsersController < ApplicationController
     if user_params[:password] != user_params[:password_confirmation]
       render :edit
     else
-      respond_to do |format|
-        if @user.update(user_params)
-          format.html { redirect_to @user, notice: "User was successfully updated." }
-          format.json { render :show, status: :ok, location: @user }
-        else
-          format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
-      end
+       @user.update(user_params)
     end
+
+    redirect_to users_path
   end
 
   # DELETE /users/1 or /users/1.json
@@ -71,6 +75,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :userid, :password, :password_confirmation, :image)
+      params.require(:user).permit(:name, :userid, :password, :password_confirmation, :image, :name_cont, :q)
     end
 end

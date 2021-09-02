@@ -11,27 +11,45 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <center>
+    <table>
+      <tbody>
+        <tr>
+          <td><%= form.label "名前　　　", class:"user_create_label" %></td>
+          <td><%= form.text_field :name, class:"user_create_field", placeholder: "名前" %></td>
+        </tr>
 
-  <div class="field">
-    <%= form.label :userid %>
-    <%= form.text_field :userid %>
-  </div>
+        <tr>
+          <td><%= form.label "ユーザーID　　　", class:"user_create_label" %></td>
+          <td><%= form.text_field :userid, class:"user_create_field", placeholder: "ユーザーID" %></td>
+        </tr>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+        <tr>
+          <td><%= form.label "パスワード　　　", class:"user_create_label" %></td>
+          <td><%= form.password_field :password, class:"user_create_field", placeholder: "パスワード" %></td>
+        </tr>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+        <tr>
+          <td><%= form.label "パスワード(再確認)　　　", class:"user_create_label" %></td>
+          <td><%= form.password_field :password_confirmation, class:"user_create_field", placeholder: "パスワード(再確認)" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </center>
 
-  <div class="actions">
-    <%= form.submit "ユーザーを作成する" %>
-  </div>
+  <br><br>
+
+  <center>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <%= form.label :image, "プロフィール画像を追加", class:"image_input_btn" %>
+            <%= form.file_field :image, class:"image_form" %>
+          </td>
+          <td><%= form.submit "新規作成", class:"user_edit_link" %></td>
+        </tr>
+      </tbody>
+    </table>
+  </center>
 <% end %>

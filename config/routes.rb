@@ -31,7 +31,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.htmls
 
   resources :users
-  get '/users/:id' =>'users#show'
+  get 'search' => 'users#search'
+  get "users/:id" =>'users#show'
 
   mount ActionCable.server => '/cable'
 end

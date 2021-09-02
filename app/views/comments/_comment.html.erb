@@ -18,8 +18,8 @@
     <div class="right_msg">
       <big><strong><%= comment.content %></strong></big>
       <small class="time"><%= " " + submitted_time %></small>
-      <% if sender.image.attached? %>
-        <%= image_tag sender.image, :class => "room_icons" %>
+      <% if sender.image.url != nil %>
+        <%= image_tag sender.image.url, :class => "room_icons" %>
       <% else %>
         <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
       <% end %>
@@ -28,8 +28,8 @@
   <% else %>
     <div class="left_msg">
       <% if 4 < Time.now - comment.created_at %>
-        <% if sender.image.attached? %>
-          <%= image_tag sender.image, :class => "room_icons", onerror: 'this.src="新着_デフォルト.png"; this.error=null;' %>
+        <% if sender.image.url != nil %>
+          <%= image_tag sender.image.url, :class => "room_icons", onerror: 'this.src="新着_デフォルト.png"; this.error=null;' %>
         <% else %>
           <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
         <% end %>

@@ -1,14 +1,25 @@
+<%= search_form_for @q, url:"search" do |f| %>
+    <%= f.search_field :userid_cont %>
+    <%= f.submit %>
+<% end %>
+
+
+<%
+  if @results == nil
+    @results = User.all.shuffle!
+  end
+%>
 <table>
   <tbody>
-    <% @users.each_with_index do |friend| %>
-      <%
-        @current_user = User.find_by(userid:current_user)
-        @judge_result = judge_ff(current_user, friend.userid)
-        @follow = (@judge_result - @judge_result % 10) / 10
-        @follower = @judge_result % 10
-      %>
-      <% if friend.userid != current_user && @follow != 0 %>
+    <% @results.each do |result| %>
+      <% if result.userid != current_user %>
         <tr class="index_row">
+          <%
+            @current_user = User.find_by(userid:current_user)
+            @judge_result = judge_ff(current_user, result.userid)
+            @follow = (@judge_result - @judge_result % 10) / 10
+            @follower = @judge_result % 10
+          %>
           <td class="ff_image">
             <% if @judge_result == 22 %>
               <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
@@ -33,41 +44,41 @@
 
 
           <td>
-              <% if friend.image.url != nil %>
-                <%= image_tag friend.image.url, :class => "index_icons", style:"float:left" %>
+              <% if result.image.url != nil %>
+                <%= image_tag result.image.url, :class => "index_icons", style:"float:left" %>
               <% else %>
                 <%= image_tag "人物_デフォルト.png", :class => "index_icons", style:"float:left" %>
               <% end %>
           </td>
 
-          <td><%= link_to friend.userid, "users/#{friend.id}", class:"follower_name", style:"float:right" %></td>
+          <td><%= link_to result.userid, result, class:"follower_name", style:"float:right" %></td>
 
           <td>
             <% if @follow == 2 %>
               <div class="followed_link">
-                <%= link_to 'フォロー解除', friends_edit2_path(userid: current_user, friendid:friend.userid), method: :get %>
+                <%= link_to 'フォロー解除', friends_edit2_path(userid: current_user, friendid:result.userid), method: :get %>
               </div>
             <% elsif @follow == 1 %>
               <div class="following_link">
-                <%= link_to 'フォロー申請中', friends_edit2_path(userid: current_user, friendid:friend.userid), method: :get %>
+                <%= link_to 'フォロー申請中', friends_edit2_path(userid: current_user, friendid:result.userid), method: :get %>
               </div>
             <% elsif @judge_result == 2 %>
               <div class="followback_link">
-                <%= link_to "フォローバック", friends_create_path(friendid:friend.userid) %>
+                <%= link_to "フォローバック", friends_create_path(friendid:result.userid) %>
               </div>
             <% elsif @judge_result == 1 || @judge_result == 0 %>
               <div class="follow_link">
-                <%= link_to "フォロー申請", friends_create_path(friendid:friend.userid) %>
+                <%= link_to "フォロー申請", friends_create_path(friendid:result.userid) %>
               </div>
             <% end %>
           </td>
 
           <% if @judge_result == 22 %>
           <%
-            if current_user < friend.userid
-              @user1, @user2 = current_user, friend.userid
+            if current_user < result.userid
+              @user1, @user2 = current_user, result.userid
             else
-              @user1, @user2 = friend.userid, current_user
+              @user1, @user2 = result.userid, current_user
             end
 
             @user_id1, @user_id2 = User.find_by(userid:@user1).id, User.find_by(userid:@user2).id

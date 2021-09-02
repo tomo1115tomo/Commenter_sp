@@ -5,8 +5,8 @@
 <div id='<%= status_id %>'>
   <% if current_user != nil %>
     <h3>
-      <% if User.find_by(userid:current_user).image.attached? %>
-        <%= image_tag User.find_by(userid:current_user).image, :class => "room_icons" %>
+      <% if User.find_by(userid:current_user).image.url != nil %>
+        <%= image_tag User.find_by(userid:current_user).image.url, :class => "room_icons" %>
       <% else %>
         <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
       <% end %>
@@ -14,7 +14,7 @@
 
     </h3>
   <% else %>
-    <h3>ようこそ ゲスト さん => <%= link_to('ログイン', '/login') %></h3><br>
+    <h3>ようこそ ゲスト さん</h3><br>
   <% end %>
 
   <input type="hidden" id="current_user_variable" value="<%= current_user %>">

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Commenter</title>
+    <% if current_user != nil %>
+      <title><%= current_user + " のページ" %></title>
+    <% else %>
+      <title>ゲストさん のページ</title>
+    <% end %>
+    
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
