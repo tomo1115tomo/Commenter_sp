@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id] && User.find_by(id:session[:user_id]) != nil
-      @current_user ||= User.find_by(id:session[:user_id]).userid if session[:user_id]
+      @current_user ||= User.find_by(id:session[:user_id]) if session[:user_id]
     end
   end
 
@@ -17,15 +17,15 @@ class ApplicationController < ActionController::Base
   end
 
   def show
-    @requests = Friend.where(friendid:current_user, request:true, allow:false).all
+    @requests = Friend.where(friend_id:current_user.id, request:true, allow:false).all
   end
 end
 
 
 
-def judge_ff(user, friend)
-  followRequest = Friend.find_by(userid:user, friendid:friend)&.request
-  followAllow = Friend.find_by(userid:user, friendid:friend)&.allow
+def judge_ff(user_id, friend_id)
+  followRequest = Friend.find_by(user_id:user_id, friend_id:friend_id)&.request
+  followAllow = Friend.find_by(user_id:user_id, friend_id:friend_id)&.allow
 
   if followRequest == true && followAllow == true
     @follow = 20
@@ -38,8 +38,8 @@ def judge_ff(user, friend)
   end
 
 
-  followerRequest = Friend.find_by(userid:friend, friendid:user)&.request
-  followerAllow = Friend.find_by(userid:friend, friendid:user)&.allow
+  followerRequest = Friend.find_by(user_id:friend_id, friend_id:user_id)&.request
+  followerAllow = Friend.find_by(user_id:friend_id, friend_id:user_id)&.allow
 
   if followerRequest == true && followerAllow == true
     @follow += 2

@@ -6,7 +6,7 @@
   <% if current_user != nil %>
     <table>
       <tbody>
-        <% requests = Friend.where(friendid: current_user, request:true, allow:false) %>
+        <% requests = Friend.where(friend_id: current_user.id, request:true, allow:false) %>
           <% if 0 < requests.length %>
             <% requests.each do |request| %>
               <tr>
@@ -14,13 +14,13 @@
 
                 <td>
                   <div class="follow_allow_link">
-                      <%= link_to 'フォロー申請許可', friends_edit1_path(userid:current_user, friendid:request.userid), method: :get %>
+                      <%= link_to 'フォロー申請許可', friends_edit1_path(user_id:current_user.id, friend_id:request.user_id), method: :get %>
                   </div>
                 </td>
 
                 <td>
                   <div class="follow_reject_link">
-                    <%= link_to 'フォロー申請削除', friends_edit2_path(userid:request.userid, friendid:current_user), method: :get %>
+                    <%= link_to 'フォロー申請削除', friends_edit2_path(user_id:request.user_id, friend_id:current_user.id), method: :get %>
                   </div>
                 </td>
 

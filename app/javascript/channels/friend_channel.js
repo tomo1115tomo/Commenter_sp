@@ -11,8 +11,8 @@ const appFriend = consumer.subscriptions.create("FriendChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    const current_user = document.getElementById('current_user_variable').value;
-    if(data['userid'] == current_user || data['friendid'] == current_user){
+    const current_user_id = document.getElementById('current_user_variable').value;
+    if(data['user_id'] == current_user_id || data['friend_id'] == current_user_id){
       window.location.reload(true);
     }
   },

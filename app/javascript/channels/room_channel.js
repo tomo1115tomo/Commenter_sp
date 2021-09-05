@@ -10,32 +10,30 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
-    var user1 = String(data['senderid']);
-    var user2 = String(data['receiverid']);
+    console.log(data)
+    var user1 = Number(data['sender_id']);
+    var user2 = Number(data['receiver_id']);
     if (user1 > user2){
       var tmp = user1;
       user1 = user2;
       user2 = tmp;
     }
 
-    const room_id = "comments" + String(data['roomid']) + "_" + user1 + "_" + user2;
+    const room_id = "comments" + String(data['room_id']) + "_" + String(user1) + "_" + String(user2);
     const comments = document.getElementById(room_id);
     comments.insertAdjacentHTML('beforeend', data['comment']);
+
+    var current_user_id = document.getElementById('current_user_variable').value;
+    if(current_user_id == data['receiver_id']){
+
+    }
 
     const msg_area = document.getElementById('msg_box');
     msg_area.scrollTop = msg_area.scrollHeight;
   },
 
-  speak: function(comment) {
-    return this.perform('speak', {content: comment, senderid:sender, receiverid:receiver, roomid:roomid});
-  }
-});
-
-window.addEventListener('keypress', function(e) {
-  if (e.keyCode === 13) {
-    appRoom.speak(e.target.value);
-    e.target.value = '';
-    e.preventDefault();
+  speak: function() {
+    return this.perform('speak', {content: content, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id});
   }
 });
 
@@ -43,4 +41,16 @@ window.addEventListener('keypress', function(e) {
 window.addEventListener('load', function() {
   const msg_area = document.getElementById('msg_box');
   msg_area.scrollTop = msg_area.scrollHeight;
+
+
+  /*var submit_btn = document.getElementById('comment_form_btn')
+  submit_btn.addEventListener('click', function() {
+      appRoom.speak();
+  });*/
+
+  document.addEventListener('keypress', function(e) {
+    if(e.keyCode == 13){
+      appRoom.speak();
+    }
+  })
 });

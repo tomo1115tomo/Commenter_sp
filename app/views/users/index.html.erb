@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<% @current_user = User.find_by(userid:current_user) %>
+<% @current_user = User.find(current_user.id) %>
 <span class="myprofile" style="float:left">
   <%= render '/users/myprofile_left' %>
 </span>

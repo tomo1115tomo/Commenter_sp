@@ -11,9 +11,11 @@ consumer.subscriptions.create("NewsChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    const news_id = "news_" + String(data['receiverid']);
+    const news_id = "news_" + String(data['receiver_id']);
     const news_area = document.getElementById(news_id);
-    news_area.insertAdjacentHTML('beforeend', data['senderid'] + " からの新着メッセージがあります" + '<br>');
+    if(news_area != null){
+      news_area.insertAdjacentHTML('beforeend', data['sender_id'] + " からの新着メッセージがあります" + '<br>');
+    }
   },
 
   speak: function() {

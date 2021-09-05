@@ -2,17 +2,16 @@
 
 <body class="body">
   <%
-    @current_user = User.find_by(userid:current_user)
-    room1 = Room.find_by(id:params[:id], userid1:current_user, user_id1:@current_user.id)
-    room2 = Room.find_by(id:params[:id], userid2:current_user, user_id2:@current_user.id)
+    room1 = Room.find_by(user_id1:current_user.id)
+    room2 = Room.find_by(user_id2:current_user.id)
     friend11, friend12, friend21, friend22 = nil, nil, nil, nil
 
     if room1 != nil
-      friend11 = Friend.find_by(userid:room1.userid2, friendid:current_user, allow:true)
-      friend12 = Friend.find_by(userid:current_user, friendid:room1.userid2, allow:true)
+      friend11 = Friend.find_by(user_id:room1.user_id2, friend_id:room1.user_id1, allow:true)
+      friend12 = Friend.find_by(user_id:room1.user_id1, friend_id:room1.user_id2, allow:true)
     elsif room2 != nil
-      friend21 = Friend.find_by(userid:room2.userid1, friendid:current_user, allow:true)
-      friend22 = Friend.find_by(userid:current_user, friendid:room2.userid1, allow:true)
+      friend21 = Friend.find_by(user_id:room2.user_id2, friend_id:room2.user_id1, allow:true)
+      friend22 = Friend.find_by(user_id:room2.user_id1, friend_id:room2.user_id2, allow:true)
     end
 
     if(room1 == nil && room2 == nil)
@@ -22,31 +21,34 @@
   <% elsif (friend11 != nil && friend12 != nil) || (friend21 != nil && friend22 != nil) %>
 
   <%
-    sender, receiver = @room.userid1, @room.userid2
-    if sender != current_user
-      sender, receiver = receiver, sender
+    sender_id, receiver_id = @room.user_id1, @room.user_id2
+    if sender_id != current_user.id
+      sender_id, receiver_id = receiver_id, sender_id
     end
     roomid = @room.id
-    room_id = "comments" + roomid.to_s + "_" + @room.userid1 + "_" + @room.userid2
+    room_id = "comments" + roomid.to_s + "_" + @room.user_id1.to_s + "_" + @room.user_id2.to_s
   %>
 
-  <div id="msg_box" class="msg_box">
+  <%= room_id %>
+
+  <div id="msg_box" class="msg_box" align="">
     <div id='<%= room_id%>'>
       <%= render @comments %>
     </div>
   </div>
 
-  <div id="form" align = "center">
-    <%= form_with(model: Comment.new()) do |form| %>
-      <%= form.hidden_field :senderid, :value => sender %>
-      <%= form.hidden_field :receiverid, :value => receiver %>
-      <%= form.hidden_field :roomid, :value => roomid %>
+  <div name="msg_form" align="center" class="comment_form">
+    <%= form_with(model: Comment.new(), id:"form" ) do |form| %>
+      <%= form.hidden_field :sender_id, :value => sender_id, id:"form_senderid" %>
+      <%= form.hidden_field :receiver_id, :value => receiver_id, id:"form_receiverid" %>
+      <%= form.hidden_field :room_id, :value => roomid, id:"form_roomid" %>
 
-      <div class="comment_form">
-        <%= form.text_field :content, class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %>
-        <% form.submit "送信" %>
-      </div>
-
+      <table>
+        <tr>
+          <td><%= form.text_field :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
+          <td><%= form.submit "送 信", id:"comment_form_btn", class:"comment_form_btn" %></td>
+        </tr>
+      </table>
     <% end %>
   </div>
 
@@ -55,3 +57,11 @@
     <center><%= link_to "トップへ戻る", users_path %></center>
   <% end %>
 </body>
+
+
+
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    document.getElementById('comment_form').focus();
+  })
+</script>

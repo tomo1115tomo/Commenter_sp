@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
 
   # GET /rooms/1 or /rooms/1.json
   def show
-    comments = Comment.where(roomid:@room.id, senderid:current_user) + Comment.where(roomid:@room.id, receiverid:current_user)
+    comments = Comment.where(room_id:@room.id, sender_id:current_user.id) + Comment.where(room_id:@room.id, receiver_id:current_user.id)
     @comments = comments.sort {|a, b| a[:created_at] <=> b[:created_at]}
   end
 
@@ -17,15 +17,15 @@ class RoomsController < ApplicationController
 
   # POST /rooms or /rooms.json
   def create
-    user1 = User.find_by(userid:room_params[:userid1])
-    user2 = User.find_by(userid:room_params[:userid2])
+    user1 = User.find(room_params[:user_id1])
+    user2 = User.find(room_params[:user_id2])
 
-    if Room.find_by(userid1:user1.userid, userid2:user2.userid, user_id1:user1.id, user_id2:user2.id) == nil
+    if Room.find_by(user_id1:user1.id, user_id2:user2.id) == nil
       @room = Room.new(room_params)
       @room.save
       redirect_to "/rooms/#{@room.id}"
     else
-      roomid = Room.find_by(userid1:user1.userid, userid2:user2.userid, user_id1:user1.id, user_id2:user2.id).id
+      roomid = Room.find_by(user_id1:user1.id, user_id2:user2.id).id
       redirect_to "/rooms/#{roomid}"
     end
   end
@@ -60,6 +60,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.permit(:userid1, :userid2, :user_id1, :user_id2)
+      params.permit(:user_id1, :user_id2)
     end
 end

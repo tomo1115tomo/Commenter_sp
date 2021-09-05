@@ -25,6 +25,11 @@
         </tr>
 
         <tr>
+          <td><%= form.label "現在のパスワード", class:"user_create_label" %></td>
+          <td><%= form.password_field :current_password, class:"user_create_field", placeholder: "現在のパスワード" %></td>
+        </tr>
+
+        <tr>
           <td><%= form.label "パスワード　　　", class:"user_create_label" %></td>
           <td><%= form.password_field :password, class:"user_create_field", placeholder: "パスワード" %></td>
         </tr>

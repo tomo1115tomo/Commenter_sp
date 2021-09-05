@@ -2,11 +2,11 @@
 <html>
   <head>
     <% if current_user != nil %>
-      <title><%= current_user + " のページ" %></title>
+      <title><%= current_user.userid + " のページ" %></title>
     <% else %>
       <title>ゲストさん のページ</title>
     <% end %>
-    
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,13 +15,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header>
+  <header align="left" class="status">
     <%= render 'layouts/status' %>
   </header>
 
   <body>
     <% if current_user != nil %>
-      <h4><%= current_user + " さんへのNews"%></h4>
+      <h4><%= current_user.userid + " さんへのNews"%></h4>
     <% else %>
       <h4><%= "ゲスト" + " さんへのNews"%></h4>
     <% end %>

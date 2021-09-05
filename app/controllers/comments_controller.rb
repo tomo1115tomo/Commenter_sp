@@ -6,13 +6,13 @@ class CommentsController < ApplicationController
     @comment = Comment.create(comments_params)
     @comment.save
 
-    @user1, @user2 = @comment.senderid, @comment.receiverid
-    if @user1 > @user2
-      @user1, @user2 = @user2, @user1
+    @user_id1, @user_id2 = @comment.sender_id.to_i, @comment.receiver_id.to_i
+    if @user_id1 > @user_id2
+      @user_id1, @user_id2 = @user_id2, @user_id1
     end
-    roomid = Room.find_by(userid1:@user1, userid2:@user2).id
+    room_id = Room.find_by(user_id1:@user_id1, user_id2:@user_id2).id
 
-    redirect_to "/rooms/#{roomid}"
+    redirect_to "/rooms/#{room_id}"
   end
 
   def index
@@ -20,6 +20,6 @@ class CommentsController < ApplicationController
 
   private
   def comments_params
-    params.require(:comment).permit(:content, :senderid, :receiverid, :roomid, :image)
+    params.require(:comment).permit(:content, :sender_id, :receiver_id, :room_id, :image)
   end
 end

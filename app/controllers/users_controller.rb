@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if User.find_by(id:params[:id]) != nil
+    if User.find(params[:id]) != nil
       @user = User.find(params[:id])
     else
       @user = nil
@@ -49,13 +49,20 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-    if user_params[:password] != user_params[:password_confirmation]
-      render :edit
+    if user_params[:password] != nil && user_params[:password_confirmation] != nil
+        if user_params[:password] == user_params[:password_confirmation]
+          if User.find(session[:user_id])&.authenticate(user_params_pw_confirmation[:current_password])
+            @user.update(user_params)
+            redirect_to users_path
+          else
+            render :edit
+          end
+        else
+          render :edit
+        end
     else
-       @user.update(user_params)
+      render :edit
     end
-
-    redirect_to users_path
   end
 
   # DELETE /users/1 or /users/1.json
@@ -69,12 +76,16 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       if params[:id] != nil
-        @user = User.find_by(userid:current_user)
+        @user = User.find(current_user.id)
       end
     end
 
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name, :userid, :password, :password_confirmation, :image, :name_cont, :q)
+    end
+
+    def user_params_pw_confirmation
+      params.require(:user).permit(:name, :userid, :password, :password_confirmation, :current_password, :image, :name_cont, :q)
     end
 end

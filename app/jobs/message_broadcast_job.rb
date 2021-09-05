@@ -1,9 +1,10 @@
+require "logger"
 class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
-    ActionCable.server.broadcast "room_channel", comment: render_message(comment), roomid: comment.roomid, senderid:comment.senderid, receiverid:comment.receiverid
-    ActionCable.server.broadcast 'news_channel', news: render_message2(comment), roomid: comment.roomid, senderid:comment.senderid, receiverid:comment.receiverid
+    ActionCable.server.broadcast "room_channel", comment: render_message(comment), room_id: comment.room_id, sender_id:comment.sender_id, receiver_id:comment.receiver_id
+    ActionCable.server.broadcast 'news_channel', news: render_message2(comment), room_id: comment.room_id, sender_id:comment.sender_id, receiver_id:comment.receiver_id
   end
 
 

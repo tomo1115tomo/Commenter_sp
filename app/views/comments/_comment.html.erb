@@ -1,44 +1,101 @@
 <%
   submitted_time = ""
-  if (comment.created_at.hour + 9) % 24 < 10
+  time = comment.created_at + 9 * 3600
+
+  if time.hour < 10
     submitted_time += "0"
   end
-  submitted_time += ((comment.created_at.hour + 9) % 24).to_s + ":"
+  submitted_time += (time.hour % 24).to_s + ":"
   if comment.created_at.min < 10
     submitted_time += "0"
   end
   submitted_time += comment.created_at.min.to_s
+
+  submitted_date = "'"
+  if time.year % 100 < 10
+    submitted_date = "0"
+  end
+  submitted_date += (time.year % 100).to_s + "/"
+  if time.month < 10
+    submitted_date += "0"
+  end
+  submitted_date += time.month.to_s + "/"
+  if time.day < 10
+    submitted_date += "0"
+  end
+  submitted_date += time.day.to_s
+
+  sender = User.find(comment.sender_id)
+  receiver = User.find(comment.receiver_id)
 %>
 
-<p>
-  <% sender = User.find_by(userid:comment.senderid) %>
-  <% receiver = User.find_by(userid:comment.receiverid) %>
+<%= current_user %>
 
-  <% if current_user == sender.userid %>
-    <div class="right_msg">
-      <big><strong><%= comment.content %></strong></big>
-      <small class="time"><%= " " + submitted_time %></small>
-      <% if sender.image.url != nil %>
-        <%= image_tag sender.image.url, :class => "room_icons" %>
-      <% else %>
-        <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
-      <% end %>
-    </div>
+<% if current_user.id == sender.id %>
+  <table align="right" style="border-collapse:collapse;">
+    <tr>
+      <td class="msg_useid" valign="center" align="right">
+        <strong><%= comment.sender_id %></strong>
+      </td>
+      <td class="msg_time msg" align="center">
+        <small class="time_time"><strong><%= submitted_time %></strong></small>
+      </td>
+    </tr>
 
-  <% else %>
-    <div class="left_msg">
-      <% if 4 < Time.now - comment.created_at %>
-        <% if sender.image.url != nil %>
-          <%= image_tag sender.image.url, :class => "room_icons", onerror: 'this.src="新着_デフォルト.png"; this.error=null;' %>
-        <% else %>
-          <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
-        <% end %>
-      <% else %>
-        <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
-      <% end %>
-
+    <tr>
+      <td class="msg_msg">
         <big><strong><%= comment.content %></strong></big>
-        <small class="time"><%= " " + submitted_time %></small>
-    </div>
-  <% end %>
-</p>
+      </td>
+      <td class="msg_usericon msg" align="center">
+            <% if sender.image.url != nil %>
+              <%= image_tag sender.image.url, :class => "room_icons" %>
+            <% else %>
+              <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+            <% end %>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left"><small class="time_date"><%= submitted_date %></small></td>
+      <td></td>
+    </tr>
+  </table>
+
+<% else %>
+  <table style="border-collapse:collapse;">
+    <tr>
+      <td class="msg_time msg" align="center">
+        <small class="time_time"><strong><%= submitted_time %></strong></small>
+      </td>
+      <td class="msg_useid" valign="center">
+        <strong><%= comment.sender_id %></strong>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="msg_usericon msg" align="center">
+            <% if 60 < Time.now - comment.created_at %>
+              <% if sender.image.url != nil %>
+                <%= image_tag sender.image.url, :class => "room_icons comment_left"%>
+              <% else %>
+                <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+              <% end %>
+            <% else %>
+              <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
+            <% end %>
+      </td>
+      <td class="msg_msg">
+        <big><strong><%= comment.content %></strong></big>
+      </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td align="right">
+        <small class="time_date"><%= submitted_date %></small>
+      </td>
+    </tr>
+  </table>
+<% end %>
+
+<br clear="all">
