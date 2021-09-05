@@ -33,7 +33,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   speak: function() {
-    return this.perform('speak', {content: content, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id});
+    return this.perform('speak', {content: content, senderoid:senderid, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id});
   }
 });
 
@@ -41,16 +41,4 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
 window.addEventListener('load', function() {
   const msg_area = document.getElementById('msg_box');
   msg_area.scrollTop = msg_area.scrollHeight;
-
-
-  /*var submit_btn = document.getElementById('comment_form_btn')
-  submit_btn.addEventListener('click', function() {
-      appRoom.speak();
-  });*/
-
-  document.addEventListener('keypress', function(e) {
-    if(e.keyCode == 13){
-      appRoom.speak();
-    }
-  })
 });

@@ -2,9 +2,6 @@ require 'logger'
 class FriendsController < ApplicationController
 
   def create
-
-    logger = Logger.new('log.log')
-    logger.debug("def create")
     if Friend.find_by(user_id: current_user.id, friend_id:friend_params[:friend_id], request:true, allow:false) == nil
       @friend = Friend.new(user_id: current_user.id, friend_id:friend_params[:friend_id], request:true, allow:false, roomid:nil)
       @friend.save

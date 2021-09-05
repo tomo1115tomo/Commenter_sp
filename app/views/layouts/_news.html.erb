@@ -1,8 +1,8 @@
-<%
-  news_id = "news_" + current_user.to_s
-%>
 
 <% if current_user != nil %>
+<%
+news_id = "news_" + current_user.id.to_s
+%>
   <div id='<%= news_id %>'>
   </div>
 <% else %>

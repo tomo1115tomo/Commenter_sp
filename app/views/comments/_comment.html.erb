@@ -29,13 +29,11 @@
   receiver = User.find(comment.receiver_id)
 %>
 
-<%= current_user %>
-
-<% if current_user.id == sender.id %>
+<% if @current_user_id == sender.id %>
   <table align="right" style="border-collapse:collapse;">
     <tr>
       <td class="msg_useid" valign="center" align="right">
-        <strong><%= comment.sender_id %></strong>
+        <strong><%= sender.userid %></strong>
       </td>
       <td class="msg_time msg" align="center">
         <small class="time_time"><strong><%= submitted_time %></strong></small>
@@ -68,7 +66,7 @@
         <small class="time_time"><strong><%= submitted_time %></strong></small>
       </td>
       <td class="msg_useid" valign="center">
-        <strong><%= comment.sender_id %></strong>
+        <strong><%= sender.userid %></strong>
       </td>
     </tr>
 

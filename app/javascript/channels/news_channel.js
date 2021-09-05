@@ -14,7 +14,7 @@ consumer.subscriptions.create("NewsChannel", {
     const news_id = "news_" + String(data['receiver_id']);
     const news_area = document.getElementById(news_id);
     if(news_area != null){
-      news_area.insertAdjacentHTML('beforeend', data['sender_id'] + " からの新着メッセージがあります" + '<br>');
+      news_area.insertAdjacentHTML('beforeend', data['senderid'] + " からの新着メッセージがあります" + '<br>');
     }
   },
 

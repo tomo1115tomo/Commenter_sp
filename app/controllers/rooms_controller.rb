@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
   def show
     comments = Comment.where(room_id:@room.id, sender_id:current_user.id) + Comment.where(room_id:@room.id, receiver_id:current_user.id)
     @comments = comments.sort {|a, b| a[:created_at] <=> b[:created_at]}
+    @current_user_id = current_user.id
   end
 
   # GET /rooms/new
