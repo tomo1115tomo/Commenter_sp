@@ -17,5 +17,7 @@
     <h3>ようこそ ゲスト さん</h3><br>
   <% end %>
 
-  <input type="hidden" id="current_user_variable" value="<%= current_user.id %>">
+  <% if current_user != nil %>
+    <input type="hidden" id="current_user_variable" value="<%= current_user.id %>">
+  <% end %>
 </div>
