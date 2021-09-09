@@ -6,9 +6,21 @@
         @judge_result = judge_ff(current_user.id, friend.id)
         @follow = (@judge_result - @judge_result % 10) / 10
         @follower = @judge_result % 10
+
+        last_comments = Comment.where(sender_id:current_user.id, receiver_id:friend.id) + Comment.where(sender_id:friend.id, receiver_id:current_user.id)
+        @last_comment = (last_comments.sort {|a, b| a[:created_at] <=> b[:created_at]}).last
+        if @last_comment != nil
+          @last_comment_date = get_comment_date(@last_comment.created_at)
+          @last_comment_time = get_comment_time(@last_comment.created_at)
+          @last_comment = @last_comment.content
+        else
+          @last_comment = ""
+          @last_comment_date = "'-- / -- / --"
+          @last_comment_time = "-- : --"
+        end
       %>
       <% if friend.id != current_user.id && @follow != 0 %>
-        <tr class="index_row">
+        <tr class="index_row_1st">
           <td class="ff_image">
             <% if @judge_result == 22 %>
               <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
@@ -81,6 +93,11 @@
         <% else %>
           <td class="roomEmpty"> </td>
         <% end %>
+        </tr>
+
+        <tr class="index_row_2nd">
+          <td align="right"><%= @last_comment_date + " " + @last_comment_time %></td>
+          <td colspan="3"><%= @last_comment %></td>
         </tr>
       <% end %>
 

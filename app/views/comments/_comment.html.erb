@@ -1,29 +1,6 @@
 <%
-  submitted_time = ""
-  time = comment.created_at + 9 * 3600
-
-  if time.hour < 10
-    submitted_time += "0"
-  end
-  submitted_time += (time.hour % 24).to_s + ":"
-  if comment.created_at.min < 10
-    submitted_time += "0"
-  end
-  submitted_time += comment.created_at.min.to_s
-
-  submitted_date = "'"
-  if time.year % 100 < 10
-    submitted_date = "0"
-  end
-  submitted_date += (time.year % 100).to_s + "/"
-  if time.month < 10
-    submitted_date += "0"
-  end
-  submitted_date += time.month.to_s + "/"
-  if time.day < 10
-    submitted_date += "0"
-  end
-  submitted_date += time.day.to_s
+  submitted_time = get_comment_time(comment.created_at)
+  submitted_date = get_comment_date(comment.created_at)
 
   sender = User.find(comment.sender_id)
   receiver = User.find(comment.receiver_id)
@@ -33,7 +10,7 @@
   <table align="right" style="border-collapse:collapse;">
     <tr>
       <td class="msg_useid" valign="center" align="right">
-        <strong><%= sender.userid %></strong>
+        <%= "From " %><strong><%= sender.userid %></strong>
       </td>
       <td class="msg_time msg" align="center">
         <small class="time_time"><strong><%= submitted_time %></strong></small>
@@ -42,7 +19,7 @@
 
     <tr>
       <td class="msg_msg">
-        <big><strong><%= comment.content %></strong></big>
+        <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
       </td>
       <td class="msg_usericon msg" align="center">
             <% if sender.image.url != nil %>
@@ -66,7 +43,7 @@
         <small class="time_time"><strong><%= submitted_time %></strong></small>
       </td>
       <td class="msg_useid" valign="center">
-        <strong><%= sender.userid %></strong>
+        <%= "From " %><strong><%= sender.userid %></strong>
       </td>
     </tr>
 
@@ -83,7 +60,7 @@
             <% end %>
       </td>
       <td class="msg_msg">
-        <big><strong><%= comment.content %></strong></big>
+        <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
       </td>
     </tr>
 

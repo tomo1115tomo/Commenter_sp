@@ -54,3 +54,46 @@ def judge_ff(user_id, friend_id)
 
   return @follow
 end
+
+
+
+def get_comment_time(date)
+  time = date + 9 * 3600
+  time_view = ""
+
+  if time.hour < 10
+    time_view += "0"
+  end
+
+  time_view += (time.hour % 24).to_s + ":"
+  if date.min < 10
+    time_view += "0"
+  end
+
+  time_view += date.min.to_s
+
+  return time_view
+end
+
+def get_comment_date(date)
+  time = date + 9 * 3600
+  date_view = "'"
+
+  if time.year % 100 < 10
+    date_view = "0"
+  end
+  date_view += (time.year % 100).to_s + "/"
+
+  if time.month < 10
+    date_view += "0"
+  end
+  date_view += time.month.to_s + "/"
+
+  if time.day < 10
+    date_view += "0"
+  end
+
+  date_view += time.day.to_s
+
+  return date_view
+end
