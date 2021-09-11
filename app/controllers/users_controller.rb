@@ -25,6 +25,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+
+  def select
+    @user = User.find(params[:id])
+  end
+
   def search
     @q = User.ransack(params[:q])
     if params[:q] != nil
@@ -50,10 +55,10 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
 
-
-
   #######編集中#######
   def update
+    @user = User.find(params[:id])
+
     #新PWと新PW(確認)がともに空白でない場合（＝PW更新の意志がある場合）
     if user_edit_pw_params_confirmation[:password].blank? == false && user_edit_pw_params_confirmation[:password_confirmation].blank? == false
       #現在のPWと一致する（＝本人確認が取れた場合）
@@ -62,25 +67,33 @@ class UsersController < ApplicationController
         if user_edit_pw_params_confirmation[:password] == user_edit_pw_params_confirmation[:password_confirmation]
           #PWありとして更新する
           @user.update(user_edit_pw_params_update)
+          flash[:notice] = "パスワードを変更しました"
           redirect_to users_path
         #新PWと新PW(確認)が一致しない
         else
-          render :edit
+          flash.now[:alert] = "新しいパスワードが一致しません"
+          render :edit2
         end
       #現在のPWと一致しない（＝本人確認が取れていない場合）
       else
-        render :edit
+        flash.now[:alert] = "現在のパスワードが一致しません"
+        render :edit2
       end
     #新PWと新PW(確認)がともに空白の場合（＝PW更新の意志がない場合）
     elsif user_edit_pw_params_confirmation[:password].blank? && user_edit_pw_params_confirmation[:password_confirmation].blank?
       #名前、ユーザーIDやプロフィール写真といった情報のみを更新する
       @user.update(user_edit_normal_params_update)
+      flash[:notice] = "ユーザー情報を更新しました"
       redirect_to users_path
     #新PWと新PW(確認)のいずれかが空白の場合（＝PW更新の意志があるか分からない場合）
-    elsif user_edit_pw_params_confirmation[:password].blank? || user_edit_pw_params_confirmation[:password_confirmation].blank?
-      render :edit
+    elsif user_edit_pw_params_confirmation[:password].blank?
+      flash.now[:alert] = "新たなパスワードを入力してください"
+      render :edit1
+    elsif user_edit_pw_params_confirmation[:password_confirmation].blank?
+      flash.now[:alert] = "新たなパスワード(確認)を入力してください"
+      render :edit1
     else
-      render :edit
+      render :select
     end
   end
 

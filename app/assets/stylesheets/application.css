@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.top_msg{
+  font-size: 15px;
+  height:15px;
+  line-height: 15px;
+  text-align: center;
+}
+ .alert{
+   background-color: #ff2d20;
+   color: white;
+ }
+ .notice{
+   background-color: #196b9a;
+   color: white;
+ }
+
 .index_icons{
     width:  70px;       /* ※縦横を同値に */
     height: 70px;       /* ※縦横を同値に */
@@ -497,7 +512,7 @@ ul {
 
 .myprofile{
     width: 33vw;
-    height: 70vh;
+    height: 67vh;
     margin-left: auto;
     margin-right: auto;
     color: white;

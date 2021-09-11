@@ -1,3 +1,47 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.edit_info_btn{
+  background-color: #0382ff;
+  color: #ffffff;
+  box-shadow: 4px 4px 6px #52a9ff;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  font-size: 15px;
+  line-height: 40px;
+  text-align: center;
+}
+.edit_info_btn:hover{
+  background-color: #0382ff;
+  color: #ffffff;
+  box-shadow: 4px 4px 6px #52a9ff;
+  transform: translate3d(0, 5px, 0);
+  box-shadow: #fff;
+}
+
+
+.edit_pw_btn{
+  background-color: #e00012;
+  color: #ffffff;
+  box-shadow: 4px 4px 6px #ff4d5b;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+.edit_pw_btn:hover{
+  background-color: #e00012;
+  color: #ffffff;
+  box-shadow: 4px 4px 6px #ff4d5b;
+  transform: translate3d(0, 5px, 0);
+  box-shadow: #fff;
+}

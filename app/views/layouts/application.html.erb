@@ -17,6 +17,16 @@
 
   <header align="left" class="status">
     <%= render 'layouts/status' %>
+
+    <div class="top_msg">
+      <% if flash.empty? == false %>
+        <% flash.each do |key, msg| %>
+          <div class="<%= key %> top_msg"><%= msg %></div>
+        <% end %>
+      <% else %>
+        <%= "" %>
+      <% end %>
+    </div>
   </header>
 
   <body>

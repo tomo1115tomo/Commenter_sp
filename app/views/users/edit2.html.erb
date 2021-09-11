@@ -1,0 +1,32 @@
+<%= form_with(model: @user) do |form| %>
+
+  <center>
+    <table>
+      <tbody>
+
+        <tr>
+          <td class="user_create_label">現在のパスワード</td>
+          <td><%= form.password_field :current_password, class:"user_create_field", placeholder: "現在のパスワード" %></td>
+        </tr>
+
+        <tr>
+          <td class="user_create_label">パスワード　　　</td>
+          <td><%= form.password_field :password, class:"user_create_field", placeholder: "パスワード" %></td>
+        </tr>
+
+        <tr>
+          <td class="user_create_label">パスワード(再確認)　　　</td>
+          <td><%= form.password_field :password_confirmation, class:"user_create_field", placeholder: "パスワード(再確認)" %></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </center>
+
+  <br><br>
+
+  <center>
+          <%= form.submit "更新する", class:"user_edit_link" %>
+  </center>
+<% end %>

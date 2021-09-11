@@ -40,5 +40,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
 
 window.addEventListener('load', function() {
   const msg_area = document.getElementById('msg_box');
-  msg_area.scrollTop = msg_area.scrollHeight;
+  if(msg_area != null){
+    msg_area.scrollTop = msg_area.scrollHeight;
+  }
 });
