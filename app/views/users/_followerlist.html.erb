@@ -1,106 +1,111 @@
-<table>
-  <tbody>
-    <% @users.each_with_index do |friend| %>
-      <%
-        @current_user = User.find(current_user.id)
-        @judge_result = judge_ff(current_user.id, friend.id)
-        @follow = (@judge_result - @judge_result % 10) / 10
-        @follower = @judge_result % 10
+<div class="" style="float:left">
+  <table>
+    <tbody>
+      <% @users.each_with_index do |friend| %>
+        <%
+          @current_user = User.find(current_user.id)
+          @judge_result = judge_ff(current_user.id, friend.id)
+          @follow = (@judge_result - @judge_result % 10) / 10
+          @follower = @judge_result % 10
 
-        last_comments = Comment.where(sender_id:current_user.id, receiver_id:friend.id) + Comment.where(sender_id:friend.id, receiver_id:current_user.id)
-        @last_comment = (last_comments.sort {|a, b| a[:created_at] <=> b[:created_at]}).last
-        if @last_comment != nil
-          @last_comment_date = get_comment_date(@last_comment.created_at)
-          @last_comment_time = get_comment_time(@last_comment.created_at)
-          @last_comment = @last_comment.content
-        else
-          @last_comment = ""
-          @last_comment_date = "'-- / -- / --"
-          @last_comment_time = "-- : --"
-        end
-      %>
-      <% if friend.id != current_user.id && @follow != 0 %>
-        <tr class="index_row_1st">
-          <td class="ff_image">
-            <% if @judge_result == 22 %>
-              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 21 %>
-              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 20 %>
-              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 12 %>
-              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 11 %>
-              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 10 %>
-              <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 2 %>
-              <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 1 %>
-              <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
-            <% elsif @judge_result == 0 %>
-              <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
-            <% end %>
-          </td>
-
-
-          <td>
-              <% if friend.image.url != nil %>
-                <%= image_tag friend.image.url, :class => "index_icons", style:"float:left" %>
-              <% else %>
-                <%= image_tag "人物_デフォルト.png", :class => "index_icons", style:"float:left" %>
+          last_comments = Comment.where(sender_id:current_user.id, receiver_id:friend.id) + Comment.where(sender_id:friend.id, receiver_id:current_user.id)
+          @last_comment = (last_comments.sort {|a, b| a[:created_at] <=> b[:created_at]}).last
+          if @last_comment != nil
+            @last_comment_date = get_comment_date(@last_comment.created_at)
+            @last_comment_time = get_comment_time(@last_comment.created_at)
+            @last_comment = @last_comment.content
+          else
+            @last_comment = ""
+            @last_comment_date = "'-- / -- / --"
+            @last_comment_time = "-- : --"
+          end
+        %>
+        <% if friend.id != current_user.id && @follow != 0 %>
+          <tr class="index_row_1st">
+            <td class="ff_image">
+              <% if @judge_result == 22 %>
+                <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 21 %>
+                <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 20 %>
+                <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 12 %>
+                <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 11 %>
+                <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 10 %>
+                <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 2 %>
+                <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 1 %>
+                <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
+              <% elsif @judge_result == 0 %>
+                <%= image_tag "ff0#{@judge_result}.png", class:"ff_image" %>
               <% end %>
-          </td>
+            </td>
 
-          <td><%= link_to friend.userid, "users/#{friend.id}", class:"follower_name", style:"float:right" %></td>
 
-          <td>
-            <% if @follow == 2 %>
-              <div class="followed_link">
-                <%= link_to 'フォロー解除', friends_edit2_path(user_id: current_user.id, friend_id:friend.id), method: :get %>
-              </div>
-            <% elsif @follow == 1 %>
-              <div class="following_link">
-                <%= link_to 'フォロー申請中', friends_edit2_path(user_id: current_user.id, friend_id:friend.id), method: :get %>
-              </div>
-            <% elsif @judge_result == 2 %>
-              <div class="followback_link">
-                <%= link_to "フォローバック", friends_create_path(friend_id:friend.id) %>
-              </div>
-            <% elsif @judge_result == 1 || @judge_result == 0 %>
-              <div class="follow_link">
-                <%= link_to "フォロー申請", friends_create_path(friend_id:friend.id) %>
-              </div>
+            <td>
+                <% if friend.image.url != nil %>
+                  <%= image_tag friend.image.url, :class => "index_icons", style:"float:left" %>
+                <% else %>
+                  <%= image_tag "人物_デフォルト.png", :class => "index_icons", style:"float:left" %>
+                <% end %>
+            </td>
+
+            <td><%= link_to friend.userid, "users/#{friend.id}", class:"follower_name", style:"float:right" %></td>
+
+            <td>
+              <% if @follow == 2 %>
+                <div class="followed_link">
+                  <%= link_to 'フォロー解除', friends_edit2_path(user_id: current_user.id, friend_id:friend.id), method: :get %>
+                </div>
+              <% elsif @follow == 1 %>
+                <div class="following_link">
+                  <%= link_to 'フォロー申請中', friends_edit2_path(user_id: current_user.id, friend_id:friend.id), method: :get %>
+                </div>
+              <% elsif @judge_result == 2 %>
+                <div class="followback_link">
+                  <%= link_to "フォローバック", friends_create_path(friend_id:friend.id) %>
+                </div>
+              <% elsif @judge_result == 1 || @judge_result == 0 %>
+                <div class="follow_link">
+                  <%= link_to "フォロー申請", friends_create_path(friend_id:friend.id) %>
+                </div>
+              <% end %>
+            </td>
+
+            <% if @judge_result == 22 %>
+            <%
+              if current_user.id < friend.id
+                @user_id1, @user_id2 = current_user.id, friend.id
+              else
+                @user_id1, @user_id2 = friend.id, current_user.id
+              end
+
+              @room = Room.find_by(user_id1:@user_id1, user_id2:@user_id2)
+              if @room == nil
+            %>
+
+              <td><%= button_to 'ルーム作成', rooms_create_path(user_id1:@user_id1, user_id2:@user_id2), method: :post, class:"roomMake_link" %></td>
+            <% else %>
+              <td><%= button_to 'ルーム入室', "/rooms/#{@room.id}", method: :get, class:"roomEntry_link" %></td>
             <% end %>
-          </td>
-
-          <% if @judge_result == 22 %>
-          <%
-            if current_user.id < friend.id
-              @user_id1, @user_id2 = current_user.id, friend.id
-            else
-              @user_id1, @user_id2 = friend.id, current_user.id
-            end
-
-            @room = Room.find_by(user_id1:@user_id1, user_id2:@user_id2)
-            if @room == nil
-          %>
-
-            <td><%= button_to 'ルーム作成', rooms_create_path(user_id1:@user_id1, user_id2:@user_id2), method: :post, class:"roomMake_link" %></td>
           <% else %>
-            <td><%= button_to 'ルーム入室', "/rooms/#{@room.id}", method: :get, class:"roomEntry_link" %></td>
+            <td class="roomEmpty"> </td>
           <% end %>
-        <% else %>
-          <td class="roomEmpty"> </td>
+          </tr>
+
+          <% recent_msg_id = "recent_" + current_user.id.to_s + "_" + friend.id.to_s %>
+
+          <tr class="index_row_2nd" id="<%= recent_msg_id %>">
+            <td align="right"><%= @last_comment_date + " " + @last_comment_time %></td>
+            <td colspan="3"><%= @last_comment %></td>
+          </tr>
         <% end %>
-        </tr>
 
-        <tr class="index_row_2nd">
-          <td align="right"><%= @last_comment_date + " " + @last_comment_time %></td>
-          <td colspan="3"><%= @last_comment %></td>
-        </tr>
       <% end %>
+    </tbody>
+  </table>
 
-    <% end %>
-  </tbody>
-</table>
+</div>

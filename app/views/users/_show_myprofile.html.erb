@@ -1,19 +1,19 @@
 
-<table>
-  <tr>
-    <td rowspan="2">
-      <% if @user.image.url != nil %>
-        <%= image_tag @user.image.url, class:"index_icons" %>
-      <% else %>
-        <%= image_tag "人物_デフォルト.png", class:"index_icons" %>
-      <% end %>
-    </td>
-    <td class="myprofile_area1"><%= "名前"%></td>
-    <td class="myprofile_area2"><big><strong><%= @user.name %></strong></big></td>
-  </tr>
+  <table>
+    <tr>
+      <td rowspan="2">
+        <% if @user.image.url != nil %>
+          <%= image_tag @user.image.url, class:"index_icons" %>
+        <% else %>
+          <%= image_tag "人物_デフォルト.png", class:"index_icons" %>
+        <% end %>
+      </td>
+      <td class="myprofile_area1"><%= "名前"%></td>
+      <td class="myprofile_area2"><big><strong><%= @user.name %></strong></big></td>
+    </tr>
 
-  <tr>
-    <td class="myprofile_area1"><%= "ユーザーID" %></td>
-    <td class="myprofile_area2"><big><strong><%= @user.userid %></strong></big></td>
-  </tr>
-</table>
+    <tr>
+      <td class="myprofile_area1"><%= "ユーザーID" %></td>
+      <td class="myprofile_area2"><big><strong><%= @user.userid %></strong></big></td>
+    </tr>
+  </table>

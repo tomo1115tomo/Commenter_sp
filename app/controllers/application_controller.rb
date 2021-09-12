@@ -56,6 +56,24 @@ def judge_ff(user_id, friend_id)
 end
 
 
+def judge_update(currentPW, newPW, newPWConfirmation)
+  result = 0
+
+  if currentPW.blank? == false
+    result += 100
+  end
+
+  if newPW.blank? == false
+    result += 10
+  end
+
+  if newPWConfirmation.blank? == false
+    result += 1
+  end
+
+  return result
+end
+
 
 def get_comment_time(date)
   time = date + 9 * 3600

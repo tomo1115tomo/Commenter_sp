@@ -1,9 +1,17 @@
 
 <% @current_user = User.find(current_user.id) %>
-<span class="myprofile" style="float:left">
-  <%= render '/users/myprofile_left' %>
-</span>
+<div class="item-list">
+  <center>
+    <div class="myprofile">
+      <%= render '/users/myprofile_left' %>
+    </div>
+  </center>
 
-<div class="followerlist" style="float:right" >
-  <%= render '/users/followerlist' %>
+  <p>&emsp;</p>
+
+  <center>
+    <div class="followerlist">
+      <%= render '/users/followerlist' %>
+    </div>
+  </center>
 </div>

@@ -6,7 +6,7 @@
 
         <tr>
           <td class="user_create_label">現在のパスワード</td>
-          <td><%= form.password_field :current_password, class:"user_create_field", placeholder: "現在のパスワード" %></td>
+          <td><%= form.password_field :current_password, class:"user_create_field", id:"user_create_field", placeholder: "現在のパスワード" %></td>
         </tr>
 
         <tr>
@@ -19,6 +19,8 @@
           <td><%= form.password_field :password_confirmation, class:"user_create_field", placeholder: "パスワード(再確認)" %></td>
         </tr>
 
+        <%= form.hidden_field :flag, :value=>0 %>
+
 
       </tbody>
     </table>
@@ -30,3 +32,11 @@
           <%= form.submit "更新する", class:"user_edit_link" %>
   </center>
 <% end %>
+
+
+
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    document.getElementById('user_create_field').focus();
+  })
+</script>

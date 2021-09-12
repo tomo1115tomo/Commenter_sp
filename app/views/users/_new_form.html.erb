@@ -5,7 +5,7 @@
       <tbody>
         <tr>
           <td><%= form.label "名前　　　", class:"user_create_label" %></td>
-          <td><%= form.text_field :name, class:"user_create_field", placeholder: "名前" %></td>
+          <td><%= form.text_field :name, class:"user_create_field", id:"user_create_field", placeholder: "名前" %></td>
         </tr>
 
         <tr>
@@ -32,3 +32,10 @@
     <%= form.submit "新規登録", class:"user_edit_link" %>
   </center>
 <% end %>
+
+
+<script type="text/javascript">
+  window.addEventListener('load', function() {
+    document.getElementById('user_create_field').focus();
+  })
+</script>

@@ -15,8 +15,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header align="left" class="status">
-    <%= render 'layouts/status' %>
+  <header align="left" class="">
+    <center>
+      <div class="status">
+        <%= render 'layouts/status' %>
+      </div>
+    </center>
 
     <div class="top_msg">
       <% if flash.empty? == false %>
@@ -30,16 +34,22 @@
   </header>
 
   <body>
-    <% if current_user != nil %>
-      <h4><%= current_user.userid + " さんへのNews"%></h4>
-    <% else %>
-      <h4><%= "ゲスト" + " さんへのNews"%></h4>
-    <% end %>
+    <center>
+      <div class="news_top">
+        <% if current_user != nil %>
+          <h4><%= current_user.userid + " さんへのNews"%></h4>
+        <% else %>
+          <h4><%= "ゲスト" + " さんへのNews"%></h4>
+        <% end %>
+      </div>
+    </center>
 
+    <center>
     <div class="news">
       <%= render 'layouts/request' %>
       <%= render 'layouts/news' %>
     </div>
+  </center>
     <%= yield %>
   </body>
 </html>

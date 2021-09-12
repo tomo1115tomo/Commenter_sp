@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+input:invalid{
+  background-color: orange;
+  box-shadow: none;
+}
+
 
 .edit_info_btn{
   background-color: #0382ff;
@@ -44,4 +49,57 @@
   box-shadow: 4px 4px 6px #ff4d5b;
   transform: translate3d(0, 5px, 0);
   box-shadow: #fff;
+}
+
+
+
+
+
+
+.myprofile{
+  color: white;
+  background-color: black;
+  max-width: 520px;
+  min-width: 520px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+}
+.followerlist{
+  color: white;
+  max-width: 860px;
+  min-width: 860px;
+  height: 65vh;
+  background-color: black;
+  overflow: hidden scroll;
+  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
+}
+.item-list{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+.myprofile_area1{
+  line-height: 50px;
+  color: #ffffff;
+  /*background-color: #002e4e;
+  box-shadow: 4px 4px 6px #00548f;*/
+  font-size: 20px;
+  border-radius: 10px;
+  height: 50px;
+  width:30%;
+}
+
+.myprofile_area2{
+  line-height: 50px;
+  color: #ffffff;
+  /*background-color: #002e4e;
+  box-shadow: 4px 4px 6px #00548f;*/
+  font-size: 25px;
+  border-radius: 10px;
+  height: 50px;
+  width: 70%;
 }

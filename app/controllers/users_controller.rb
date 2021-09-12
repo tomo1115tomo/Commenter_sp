@@ -23,11 +23,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(current_user.id)
   end
 
 
   def select
-    @user = User.find(params[:id])
+    @user = User.find(current_user.id)
   end
 
   def search
@@ -49,7 +50,14 @@ class UsersController < ApplicationController
         redirect_to users_path
       end
     else
-      render :new
+      unless @user.valid?
+        @user.errors.each do |key, value|
+          flash.now[:alert] = value
+        end
+        render :new
+      else
+        render :new
+      end
     end
   end
 
@@ -57,10 +65,11 @@ class UsersController < ApplicationController
 
   #######編集中#######
   def update
-    @user = User.find(params[:id])
+    update_num = judge_update(user_edit_pw_params_confirmation[:current_password], user_edit_pw_params_confirmation[:password], user_edit_pw_params_confirmation[:password_confirmation])
+    @user = User.find(current_user.id)
 
-    #新PWと新PW(確認)がともに空白でない場合（＝PW更新の意志がある場合）
-    if user_edit_pw_params_confirmation[:password].blank? == false && user_edit_pw_params_confirmation[:password_confirmation].blank? == false
+    case update_num
+    when 111 then
       #現在のPWと一致する（＝本人確認が取れた場合）
       if @user&.authenticate(user_edit_pw_params_confirmation[:current_password])
         #新PWと新PW(確認)が一致する
@@ -71,31 +80,48 @@ class UsersController < ApplicationController
           redirect_to users_path
         #新PWと新PW(確認)が一致しない
         else
-          flash.now[:alert] = "新しいパスワードが一致しません"
+          flash.now[:alert] = "新しいパスワード が一致しません"
           render :edit2
         end
       #現在のPWと一致しない（＝本人確認が取れていない場合）
       else
-        flash.now[:alert] = "現在のパスワードが一致しません"
+        flash.now[:alert] = "現在のパスワード が一致しません"
         render :edit2
       end
-    #新PWと新PW(確認)がともに空白の場合（＝PW更新の意志がない場合）
-    elsif user_edit_pw_params_confirmation[:password].blank? && user_edit_pw_params_confirmation[:password_confirmation].blank?
-      #名前、ユーザーIDやプロフィール写真といった情報のみを更新する
-      @user.update(user_edit_normal_params_update)
-      flash[:notice] = "ユーザー情報を更新しました"
-      redirect_to users_path
-    #新PWと新PW(確認)のいずれかが空白の場合（＝PW更新の意志があるか分からない場合）
-    elsif user_edit_pw_params_confirmation[:password].blank?
-      flash.now[:alert] = "新たなパスワードを入力してください"
-      render :edit1
-    elsif user_edit_pw_params_confirmation[:password_confirmation].blank?
-      flash.now[:alert] = "新たなパスワード(確認)を入力してください"
-      render :edit1
+
+    when 0 then
+      if user_edit_normal_params_confirmation[:flag].to_i == 1
+        #名前、ユーザーIDやプロフィール写真といった情報のみを更新する
+        @user.update(user_edit_normal_params_update)
+        flash[:notice] = "ユーザー情報を更新しました"
+        redirect_to users_path
+      else
+        flash.now[:alert] = "新たなパスワード と 新たなパスワード(確認) を入力してください"
+        render :edit2
+      end
+
+    when 100 then
+      flash.now[:alert] = "新たなパスワード と 新たなパスワード(確認) を入力してください"
+      render :edit2
+
+    when 101 then
+      flash.now[:alert] = "新たなパスワード を入力してください"
+      render :edit2
+
+    when 110 then
+      flash.now[:alert] = "新たなパスワード(確認) を入力してください"
+      render :edit2
+
+    when 1, 10, 11 then
+      flash.now[:alert] = "現在のパスワード を入力してください"
+      render :edit2
+
     else
       render :select
     end
   end
+
+
 
   # DELETE /users/1 or /users/1.json
   def destroy
@@ -109,7 +135,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      if params[:id] != nil
+      if current_user != nil
         @user = User.find(current_user.id)
       end
     end
@@ -120,7 +146,7 @@ class UsersController < ApplicationController
     end
 
     def user_edit_normal_params_confirmation
-      params.require(:user).permit(:name, :userid, :current_password, :image, :name_cont, :q)
+      params.require(:user).permit(:name, :userid, :current_password, :image, :name_cont, :q, :flag)
     end
     def user_edit_normal_params_update
       params.require(:user).permit(:name, :userid, :image, :name_cont, :q)

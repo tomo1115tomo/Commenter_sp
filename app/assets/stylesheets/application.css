@@ -50,7 +50,7 @@
 }
 
 .msg_box{
-  width: 95vw;
+  width: 1394px;
   height: 55vh;
   color: white;
   background-color: black;
@@ -58,16 +58,29 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, .2);
 }
 
-.status{
-  width: 95vw;
-}
 
 .time_date{
   color: gray;
 }
 
+
+
+.status{
+  max-width: 1394px;
+  text-align: left;
+  color: white;
+  background-color: black;
+}
+.news_top{
+  max-width: 1394px;
+  text-align: left;
+  color: white;
+  background-color: black;
+}
 .news{
-  width: 95vw;
+  max-width: 1394px;
+  align-items: center;
+  text-align: left;
   height: 10vh;
   color: white;
   background-color: black;
@@ -127,34 +140,7 @@
 
 
 
-.comment_form{
-    width: 85vw;
-    height: 10vh;
-    color: white;
-    font-size: 20px;
-    background-color: black;
-}
-.comment_form_btn{
-  width: 10vw;
-  background-color: #0382ff;
-  color: #ffffff;
-  box-shadow: 4px 4px 6px #52a9ff;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  height: 40px;
-  width: 70px;
-  font-size: 20px;
-  line-height: 40px;
-  text-align: center;
-}
-.comment_form_btn:hover{
-  background-color: #0382ff;
-  color: #ffffff;
-  box-shadow: 4px 4px 6px #52a9ff;
-  transform: translate3d(0, 5px, 0);
-  box-shadow: #fff;
-}
+
 
 .left_msg{
   text-align: left;
@@ -189,27 +175,6 @@ ul {
   list-style: none;
 }
 
-.myprofile_area1{
-  line-height: 50px;
-  color: #ffffff;
-  /*background-color: #002e4e;
-  box-shadow: 4px 4px 6px #00548f;*/
-  font-size: 20px;
-  border-radius: 10px;
-  height: 50px;
-  width: 130px;
-}
-
-.myprofile_area2{
-  line-height: 50px;
-  color: #ffffff;
-  /*background-color: #002e4e;
-  box-shadow: 4px 4px 6px #00548f;*/
-  font-size: 25px;
-  border-radius: 10px;
-  height: 50px;
-  width: 300px;
-}
 
 .userid_area{
   line-height: 50px;
@@ -430,11 +395,6 @@ ul {
   margin-bottom: 0px auto;
 }
 
-@media only screen and (max-width:1000px) {
-  .ff_image{
-    display: none;
-  }
-}
 
 .follower_name{
   margin-left: 10px;
@@ -447,7 +407,7 @@ ul {
 }
 
 .index_row_1st{
-  width: 100vw;
+  width: 100%;
   height: 10vh;
   margin-left: auto;
   margin-right: auto;
@@ -457,7 +417,7 @@ ul {
   box-shadow: 4px 0px 4px rgba(255, 255, 255, .2);
 }
 .index_row_2nd{
-  width: 100vw;
+  width: 100%;
   height: 3vh;
   margin-left: auto;
   margin-right: auto;
@@ -510,26 +470,9 @@ ul {
   width: 100px;
 }
 
-.myprofile{
-    width: 33vw;
-    height: 67vh;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    background-color: black;
-    box-shadow: 0 0 10px rgba(255, 255, 255, .2);
-}
 
-.followerlist{
-  width: 60vw;
-  height: 66vh;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  background-color: black;
-  overflow: hidden scroll;
-  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
-}
+
+
 
 a.top_login_link{
   text-decoration: underline;
@@ -650,8 +593,4 @@ a.top_create_link{
   box-shadow: 4px 4px 6px #52a9ff;
   transform: translate3d(0, 5px, 0);
   box-shadow: #fff;
-}
-
-html{
-  width: 1500px;
 }

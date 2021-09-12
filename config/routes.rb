@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-  get 'users/edit1/:id' => 'users#edit1', as: :user_update1
-  get 'users/edit2/:id' => 'users#edit2', as: :user_update2
-  get 'users/select/:id' => 'users#select'
+  get 'users/edit1' => 'users#edit1', as: :user_update1
+  get 'users/edit2' => 'users#edit2', as: :user_update2
+  get 'users/select' => 'users#select'
 
   get '/' => 'users#index'
 

@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="item-list">
+  <center>
+    <div class="myprofile">
+      <%= render '/users/show_myprofile' %>
+    </div>
+  </center>
 
-<div class="myprofile" style="float:left" >
-  <%= render '/users/show_myprofile' %>
-</div>
-
-<div class="followerlist" style="float:right" >
-  <%= render '/users/show_followerlist' %>
+    <p>&emsp;</p>
+  <center>
+    <div class="followerlist">
+      <%= render '/users/show_followerlist' %>
+    </div>
+  </center>
 </div>

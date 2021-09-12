@@ -1,4 +1,5 @@
-<center><h2>フォローリスト</h2></center>
+<div class="" style="float:left">
+  <center><h2>フォローリスト</h2></center>
 <% if @user != nil && @user.id != current_user.id %>
   <table>
     <tbody>
@@ -112,3 +113,5 @@
   <center><h2>申し訳ありません　このページは表示できません…  </h2></center>
   <center><%= link_to "トップへ戻る", users_path %></center>
 <% end %>
+
+</div>

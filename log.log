@@ -47,3 +47,27 @@ D, [2021-09-11T23:05:55.643533 #65808] DEBUG -- : #<ActionController::Parameters
 D, [2021-09-11T23:05:55.645922 #65808] DEBUG -- : test
 D, [2021-09-11T23:05:55.646163 #65808] DEBUG -- : 12
 D, [2021-09-11T23:05:55.854093 #65808] DEBUG -- : #<User id: 2, name: "神谷香奈江", userid: "peppe", created_at: "2021-08-18 16:47:34.917853000 +0000", updated_at: "2021-09-11 14:05:32.852792000 +0000", password_digest: [FILTERED], admin: false, image: "P3012538.JPG", description: nil>
+D, [2021-09-12T18:11:26.552118 #123712] DEBUG -- : 0
+D, [2021-09-12T18:11:44.173492 #123712] DEBUG -- : 100
+D, [2021-09-12T18:24:05.794562 #123712] DEBUG -- : 100
+D, [2021-09-12T18:24:40.413778 #123712] DEBUG -- : 0
+D, [2021-09-12T18:25:12.087990 #123712] DEBUG -- : 111
+D, [2021-09-12T18:25:54.735426 #123712] DEBUG -- : 111
+D, [2021-09-12T18:26:16.977954 #123712] DEBUG -- : 111
+D, [2021-09-12T18:26:26.378166 #123712] DEBUG -- : 111
+D, [2021-09-13T02:52:22.197979 #123712] DEBUG -- : #<ActionController::Parameters {"_method"=>"patch", "authenticity_token"=>"-zirWi_1k2UFC1VRbSz7s8_kuPjhlpEVVHvR-tMG4PIJDg64ayx0bZIj1qsWIf0VtiQBbJ8mJ_t-EpHeKqE9gg", "user"=>#<ActionController::Parameters {"current_password"=>"", "password"=>"", "password_confirmation"=>"", "flag"=>"0"} permitted: false>, "commit"=>"更新する", "controller"=>"users", "action"=>"update", "id"=>"5"} permitted: false>
+D, [2021-09-13T02:53:10.890404 #123712] DEBUG -- : #<ActionController::Parameters {"_method"=>"patch", "authenticity_token"=>"AUeMX72LtbZpxMX-7aiZSb2GQk6DEWzJ9h6Erff9wpXzcSm9-VJSvv7sRgSWpZ_vxEb72v2h2ifcd8SJDlof5Q", "user"=>#<ActionController::Parameters {"current_password"=>"", "password"=>"", "password_confirmation"=>"", "flag"=>"0"} permitted: false>, "commit"=>"更新する", "controller"=>"users", "action"=>"update", "id"=>"5"} permitted: false>
+D, [2021-09-13T02:53:23.464851 #123712] DEBUG -- : #<ActionController::Parameters {"_method"=>"patch", "authenticity_token"=>"PGM97Ki41jPu8wNPTqQSo9x9D1nzyj-By5GV9_XfjLHOVZgO7GExO3nbgLU1qRQFpb22zY16iW_h-NXTDHhRwQ", "user"=>#<ActionController::Parameters {"name"=>"長屋晴子", "userid"=>"nagaya", "description"=>"", "flag"=>"1"} permitted: false>, "commit"=>"更新する", "controller"=>"users", "action"=>"update", "id"=>"5"} permitted: false>
+D, [2021-09-13T02:55:01.279403 #123712] DEBUG -- : false
+D, [2021-09-13T02:55:20.127403 #123712] DEBUG -- : 1
+D, [2021-09-13T02:55:37.653931 #123712] DEBUG -- : 0
+D, [2021-09-13T02:56:59.386895 #123712] DEBUG -- : #<ActionController::Parameters {"_method"=>"patch", "authenticity_token"=>"-WYH3EVLbi0JQu320jjitRRZCTTKFXZL3uVAu5cvzmwLUKI-AZKJJZ5qbgypNeQTbZmwoLSlwKX0jACfbogTHA", "user"=>#<ActionController::Parameters {"current_password"=>"", "password"=>"", "password_confirmation"=>"", "flag"=>"0"} permitted: false>, "commit"=>"更新する", "controller"=>"users", "action"=>"update", "id"=>"5"} permitted: false>
+D, [2021-09-13T02:57:27.295827 #123712] DEBUG -- : #<ActionController::Parameters {"_method"=>"patch", "authenticity_token"=>"SFrlDzAJ3d2oH7TrskeQzz5YMqLj_Du2mQy_-ucMBeC6bEDtdNA61T83NxHJSpZpR5iLNp1MjVizZf_eHqvYkA", "user"=>#<ActionController::Parameters {"name"=>"長屋晴子", "userid"=>"nagaya", "description"=>"", "flag"=>"1"} permitted: false>, "commit"=>"更新する", "controller"=>"users", "action"=>"update", "id"=>"5"} permitted: false>
+D, [2021-09-13T02:57:52.717307 #123712] DEBUG -- : nil
+D, [2021-09-13T02:58:54.224911 #123712] DEBUG -- : 1
+D, [2021-09-13T02:59:20.601676 #123712] DEBUG -- : 3
+D, [2021-09-13T03:13:19.986123 #123712] DEBUG -- : #<ActiveModel::Errors:0x0000024bf57c5cc0 @base=#<User id: nil, name: "nagaya", userid: "nagaya", created_at: nil, updated_at: nil, password_digest: [FILTERED], admin: false, image: nil, description: nil>, @errors=[#<ActiveModel::Error attribute=userid, type=taken, options={:message=>"%{value}はすでに使用されています", :value=>"nagaya"}>]>
+D, [2021-09-13T03:14:36.898455 #123712] DEBUG -- : []
+D, [2021-09-13T03:15:18.776346 #123712] DEBUG -- : []
+D, [2021-09-13T03:15:45.108177 #123712] DEBUG -- : ["nagayaはすでに使用されています"]
+D, [2021-09-13T03:16:16.216798 #123712] DEBUG -- : ["nagayaはすでに使用されています"]

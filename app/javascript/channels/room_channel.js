@@ -19,9 +19,21 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
       user2 = tmp;
     }
 
+    if(location.pathname == '/users'){
+      var recent_msg_id = "recent_" + String(data['receiver_id']) + "_" + String(data['sender_id']);
+      var recent_msg_area = document.getElementById(recent_msg_id);
+
+      var msg_content = '<td align="right" style="color:white">' + data['created_at'] + '</td>' + '<td colspan="3" style="color:white">' + data['content'] + '</td>';
+      recent_msg_area.innerHTML = msg_content;
+    }
+
+
     const room_id = "comments" + String(data['room_id']) + "_" + String(user1) + "_" + String(user2);
     const comments = document.getElementById(room_id);
-    comments.insertAdjacentHTML('beforeend', data['comment']);
+
+    if(comments != null){
+      comments.insertAdjacentHTML('beforeend', data['comment']);
+    }
 
     var current_user_id = document.getElementById('current_user_variable').value;
     if(current_user_id == data['receiver_id']){
@@ -29,7 +41,10 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
     }
 
     const msg_area = document.getElementById('msg_box');
-    msg_area.scrollTop = msg_area.scrollHeight;
+    if(msg_area != null){
+      msg_area.scrollTop = msg_area.scrollHeight;
+    }
+
   },
 
   speak: function() {
