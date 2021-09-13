@@ -10,7 +10,7 @@
           <% if 0 < requests.length %>
             <% requests.each do |request| %>
               <tr>
-                <td><%= request.userid %> からフォロー申請が来ています</td>
+                <td><%= User.find(request.user_id).userid %> からフォロー申請が来ています</td>
 
                 <td>
                   <div class="follow_allow_link">
