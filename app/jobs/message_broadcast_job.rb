@@ -6,7 +6,7 @@ class MessageBroadcastJob < ApplicationJob
     create_date = get_comment_date(comment.created_at)
     create_time = get_comment_time(comment.created_at)
     tmp = create_date + " " + create_time
-    ActionCable.server.broadcast "room_channel", comment: render_message(comment), content: comment.content, title: comment.title, room_id: comment.room_id, sender_id:comment.sender_id, receiver_id:comment.receiver_id, created_at:tmp
+    ActionCable.server.broadcast "room_channel", comment: render_message(comment), content: comment.content, title: comment.title, room_id: comment.room_id, sender_id:comment.sender_id, receiver_id:comment.receiver_id, created_at:tmp, emotion:comment.emotion, expression:comment.expression
     ActionCable.server.broadcast 'news_channel', news: render_message2(comment), senderid: comment.senderid, title: comment.title, room_id: comment.room_id, sender_id:comment.sender_id, receiver_id:comment.receiver_id
   end
 
