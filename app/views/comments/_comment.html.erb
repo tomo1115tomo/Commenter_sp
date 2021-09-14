@@ -4,73 +4,93 @@
 
   sender = User.find(comment.sender_id)
   receiver = User.find(comment.receiver_id)
+
+  emotion = "emotion_" + comment.emotion.to_s unless comment.emotion.nil?
+  emotion_top = "emotion_" + comment.emotion.to_s + "_top" unless comment.emotion.nil?
+  emotion_bottom = "emotion_" + comment.emotion.to_s + "_bottom" unless comment.emotion.nil?
 %>
 
-<% if @current_user_id == sender.id %>
-  <table align="right" style="border-collapse:collapse;">
-    <tr>
-      <td class="msg_useid" valign="center" align="right">
-        <%= "From " %><strong><%= sender.userid %></strong>
-      </td>
-      <td class="msg_time msg" align="center">
-        <small class="time_time"><strong><%= submitted_time %></strong></small>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="msg_msg">
-        <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
-      </td>
-      <td class="msg_usericon msg" align="center">
-            <% if sender.image.url != nil %>
-              <%= image_tag sender.image.url, :class => "room_icons" %>
-            <% else %>
-              <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
-            <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <td align="left"><small class="time_date"><%= submitted_date %></small></td>
-      <td></td>
-    </tr>
-  </table>
-
-<% else %>
-  <table align="left" style="border-collapse:collapse;">
-    <tr>
-      <td class="msg_time msg" align="center">
-        <small class="time_time"><strong><%= submitted_time %></strong></small>
-      </td>
-      <td class="msg_useid" valign="center">
-        <%= "From " %><strong><%= sender.userid %></strong>
-      </td>
-    </tr>
-
-    <tr>
-      <td class="msg_usericon msg" align="center">
-            <% if 60 < Time.now - comment.created_at %>
-              <% if sender.image.url != nil %>
-                <%= image_tag sender.image.url, :class => "room_icons comment_left"%>
-              <% else %>
-                <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+<% if comment.expression == 0 || comment.expression == nil %>
+    <% if @current_user_id == sender.id %>
+      <table align="right" style="border-collapse:collapse;">
+        <tr>
+          <td rowspan="3">
+              <% unless emotion.nil? %>
+                <%= image_tag emotion + ".png", class:"emotion_icons" %>
               <% end %>
-            <% else %>
-              <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
-            <% end %>
-      </td>
-      <td class="msg_msg">
-        <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
-      </td>
-    </tr>
+          </td>
+          <td class="<%= emotion_top %> msg_top" valign="center" align="right">
+            <%= "　From " %><strong><%= sender.userid + " 　" %></strong>
+          </td>
+          <td class="" align="center">
+            <small class=""><strong><%= submitted_time %></strong></small>
+          </td>
+        </tr>
 
-    <tr>
-      <td></td>
-      <td align="right">
-        <small class="time_date"><%= submitted_date %></small>
-      </td>
-    </tr>
-  </table>
+        <tr>
+          <td class="<%= emotion_bottom %> msg_bottom">
+            <strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong>
+          </td>
+          <td class="" align="center">
+                <% if sender.image.url != nil %>
+                  <%= image_tag sender.image.url, :class => "room_icons" %>
+                <% else %>
+                  <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+                <% end %>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="left"><small class="time_date"><%= submitted_date %></small></td>
+          <td></td>
+        </tr>
+      </table>
+
+    <% else %>
+      <table align="left" style="border-collapse:collapse;">
+        <tr>
+          <td class="" align="center">
+            <small class="time_time"><strong><%= submitted_time %></strong></small>
+          </td>
+          <td class="<%= emotion_top %> msg_top" valign="center">
+            <%= "From " %><strong><%= sender.userid %></strong>
+          </td>
+
+          <td rowspan="3">
+              <% unless emotion.nil? %>
+                <%= image_tag emotion + ".png", class:"emotion_icons" %>
+              <% end %>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="" align="center">
+                <% if 60 < Time.now - comment.created_at %>
+                  <% if sender.image.url != nil %>
+                    <%= image_tag sender.image.url, :class => "room_icons comment_left"%>
+                  <% else %>
+                    <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+                  <% end %>
+                <% else %>
+                  <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
+                <% end %>
+          </td>
+          <td class="<%= emotion_bottom %> msg_bottom">
+            <strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong>
+          </td>
+        </tr>
+
+        <tr>
+          <td></td>
+          <td align="right">
+            <small class="time_date"><%= submitted_date %></small>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+
+<% elsif comment.expression == 1 %>
+
 <% end %>
 
 <br clear="all">

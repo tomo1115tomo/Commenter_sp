@@ -28,13 +28,42 @@
     room_id = "comments" + roomid.to_s + "_" + @room.user_id1.to_s + "_" + @room.user_id2.to_s
   %>
 
-  <center>
-    <div id="msg_box" class="msg_box" align="">
-      <div id='<%= room_id%>'>
-        <%= render @comments %>
+  <div class="item-list">
+    <center>
+      <div class="">
+          <div id="msg_box" class="msg_box" align="">
+            <div id='<%= room_id%>'>
+              <%= render @comments %>
+            </div>
+          </div>
       </div>
-    </div>
-  </center>
+    </center>
+
+    <center>
+      <div class="">
+        <%= form_with(model: Comment.new(), id:"form" ) do |form| %>
+          <%= form.hidden_field :senderid, :value => senderid, id:"form_senderid" %>
+          <%= form.hidden_field :sender_id, :value => sender_id, id:"form_sender_id" %>
+          <%= form.hidden_field :receiver_id, :value => receiver_id, id:"form_receiver_id" %>
+          <%= form.hidden_field :room_id, :value => roomid, id:"form_room_id" %>
+
+          <table align="center">
+            <tr>
+              <td colspan="3"><%= form.text_field :title, id:"comment_form_title", class: "comment_form_title", data: { behavior: 'room_speaker'}, placeholder: "ここに件名を入力..." %></td>
+            </tr>
+            <tr>
+              <td colspan="3"><%= form.text_area :content, id:"comment_form_long", class: "comment_form_long", data: { behavior: 'room_speaker'}, placeholder: "ここに本文を入力..." %></td>
+            </tr>
+            <tr>
+              <td align="center"><%= image_submit_tag("expression_1.png", class:"comment_form_long_btn", name:"expression_1") %></td>
+              <td align="center"><%= image_submit_tag("expression_2.png", class:"comment_form_long_btn", name:"expression_2") %></td>
+              <td align="center"><%= image_submit_tag("expression_3.png", class:"comment_form_long_btn", name:"expression_3") %></td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+    </center>
+  </div>
 
   <div name="msg_form">
     <%= form_with(model: Comment.new(), id:"form" ) do |form| %>
@@ -46,7 +75,11 @@
       <table align="center">
         <tr>
           <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
-          <td><%= form.submit "送 信", id:"comment_form_btn", class:"comment_form_btn" %></td>
+          <td><%= image_submit_tag("emotion_0.png", class:"comment_form_btn", name:"emotion_0") %></td>
+          <td><%= image_submit_tag("emotion_1.png", class:"comment_form_btn", name:"emotion_1") %></td>
+          <td><%= image_submit_tag("emotion_2.png", class:"comment_form_btn", name:"emotion_2") %></td>
+          <td><%= image_submit_tag("emotion_3.png", class:"comment_form_btn", name:"emotion_3") %></td>
+          <td><%= image_submit_tag("emotion_4.png", class:"comment_form_btn", name:"emotion_4") %></td>
         </tr>
       </table>
     <% end %>

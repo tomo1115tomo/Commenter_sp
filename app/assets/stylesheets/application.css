@@ -35,28 +35,9 @@
     background-position: center center;
 }
 
-.room_icons{
-    width:  30px;       /* ※縦横を同値に */
-    height: 30px;       /* ※縦横を同値に */
-    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
-    background-position: center center;
-      background-color: #5bb7ae;
-}
 
-.roomnew_icons{
-    width:  30px;       /* ※縦横を同値に */
-    height: 30px;       /* ※縦横を同値に */
-    background-position: center center;
-}
 
-.msg_box{
-  width: 1394px;
-  height: 55vh;
-  color: white;
-  background-color: black;
-  overflow: hidden scroll;
-  box-shadow: 0 0 10px rgba(255, 255, 255, .2);
-}
+
 
 
 .time_date{
@@ -88,9 +69,6 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, .2);
 }
 
-.msg{
-  background: #5bb7ae;
-}
 
 
 

@@ -71,3 +71,41 @@ D, [2021-09-13T03:14:36.898455 #123712] DEBUG -- : []
 D, [2021-09-13T03:15:18.776346 #123712] DEBUG -- : []
 D, [2021-09-13T03:15:45.108177 #123712] DEBUG -- : ["nagayaはすでに使用されています"]
 D, [2021-09-13T03:16:16.216798 #123712] DEBUG -- : ["nagayaはすでに使用されています"]
+D, [2021-09-14T18:47:33.207555 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"ElJ1spfFLGAWD42D5-7qN6lmrnNW7LOBbhnu-4u1fryA73XYUL3Bm-co25-xRcIQ-6d_oybM7yOf929acscFaw", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_0.x"=>"50", "emotion_0.y"=>"34", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T18:48:22.848912 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"LAVR4RFMAKPw7nsujdTW7R2OOV0XVEAckGPbeheCEgq-uFGL1jTtWAHJLTLbf_7KT0_ojWd0HL5hjVrb7vBp3Q", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_0.x"=>"16", "emotion_0.y"=>"35", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T18:48:45.907283 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"W6G2zJGj_4u6skNFIb8xsaR_gnmt2_4R5TlOTY9cbb_JHLamVtsScEuVFVl3FBmW9r5Tqd37orMU18_sdi4WaA", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_0.x"=>"45", "emotion_0.y"=>"28", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T18:49:02.913360 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"WbKLgeW8kYe5ECB1RoCcURzi8iAvcZD379GpvhjPyu3LD4vrIsR8fEg3dmkQK7R2TiMj8F9RzFUePygf4b2xOg", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_1.x"=>"22", "emotion_1.y"=>"28", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T18:50:13.875345 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"nVla8TZKopwXQQVkgnSgv42MSjYEVFt968FAJ2hgpWUP5Fqb8TJPZ-ZmU3jU34iY302b5nR0B98aL8GGkRLesg", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_1.x"=>"41", "emotion_1.y"=>"39", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T18:50:15.993808 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"sFT1ncMG6zhmvnsM1wHuk6HcQGf-llW4tFVqFxHM9bEi6fX3BH4Gw5eZLRCBqsa08x2Rt462CRpFu-u26L6OZg", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_0.x"=>"38", "emotion_0.y"=>"34", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T18:50:45.540810 #81388] DEBUG -- : nil
+D, [2021-09-14T19:00:56.768905 #81388] DEBUG -- : nil
+D, [2021-09-14T19:01:15.266429 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"9OJq3IjJgNmNP-8VW0tpewuxRUrtVSKZ34ey7tvn_-pmX2q2T7FtInwYuQkN4EFcWXCUmp11fjsuaTNPIpWEPQ", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_1.x"=>"25", "emotion_1.y"=>"36", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T19:03:59.287182 #81388] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"UdhPhKEYkF8_NJtHAPQRx1D7vMTzCZ9vuElCx67sjljDZU_uZmB9pM4TzVtWXzngAjptFIMpw81Jp8NmV571jw", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "x"=>"31", "y"=>"39", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T19:04:27.735889 #81388] DEBUG -- : nil
+D, [2021-09-14T19:04:40.295850 #81388] DEBUG -- : 21
+D, [2021-09-14T22:25:40.091997 #39728] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"DnsY6x0xxnoSjQVfsJlL76ynEOeaX_T8irjJBaV-9KCcxhiB2kkrgeOqU0PmMmPI_mbBN-p_qF57VkikXAyPdw", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "x"=>"39", "y"=>"44", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T22:26:37.864586 #39728] DEBUG -- : nil
+D, [2021-09-14T22:28:01.080164 #39728] DEBUG -- : nil
+D, [2021-09-14T22:28:10.687403 #39728] DEBUG -- : nil
+D, [2021-09-14T22:30:16.937574 #39728] DEBUG -- : nil
+D, [2021-09-14T22:30:27.770415 #39728] DEBUG -- : nil
+D, [2021-09-14T22:30:38.740415 #39728] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"fd4l3qaNVyTrT_Vn_bVhRwLTkvvoJG3chzRjZzcFpervYyW0YfW63xpoo3urHklgUBJDK5gEMX522uLGznfePQ", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""}, "emotion_1.x"=>"42", "emotion_1.y"=>"11", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-14T22:34:47.785474 #39728] DEBUG -- : nil
+D, [2021-09-14T22:42:13.194465 #39728] DEBUG -- : 21
+D, [2021-09-14T22:42:29.291283 #39728] DEBUG -- : nil
+D, [2021-09-14T22:43:16.776326 #39728] DEBUG -- : nil
+D, [2021-09-14T22:43:16.776435 #39728] DEBUG -- : emotion_0
+D, [2021-09-14T22:43:18.768689 #39728] DEBUG -- : 30
+D, [2021-09-14T22:43:18.768868 #39728] DEBUG -- : emotion_1
+D, [2021-09-14T22:43:20.157738 #39728] DEBUG -- : 30
+D, [2021-09-14T22:43:20.157935 #39728] DEBUG -- : emotion_1
+D, [2021-09-14T22:50:24.815212 #39728] DEBUG -- : nil
+D, [2021-09-14T22:50:50.844285 #39728] DEBUG -- : nil
+D, [2021-09-14T22:52:11.246140 #39728] DEBUG -- : nil
+D, [2021-09-14T22:52:23.435045 #39728] DEBUG -- : nil
+D, [2021-09-14T23:05:18.547255 #39728] DEBUG -- : nil
+D, [2021-09-14T23:46:30.337345 #39728] DEBUG -- : nil
+D, [2021-09-14T23:46:31.172130 #39728] DEBUG -- : nil
+D, [2021-09-14T23:53:13.171562 #39728] DEBUG -- : nil
+D, [2021-09-15T01:27:57.068343 #39728] DEBUG -- : nil
+D, [2021-09-15T01:28:26.665041 #39728] DEBUG -- : nil
