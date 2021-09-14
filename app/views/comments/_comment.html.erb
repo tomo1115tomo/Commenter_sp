@@ -153,6 +153,7 @@
         </table>
         <br clear="all">
     <% end %>
+
 <% elsif comment.expression == 3 %>
     <% if @current_user_id == sender.id %>
           <table align="right" style="border-collapse:collapse;">
@@ -188,6 +189,7 @@
               </td>
             </tr>
           </table>
+          <br clear="all">
     <% else %>
           <table align="left" style="border-collapse:collapse;">
             <tr>
@@ -221,6 +223,7 @@
               <td align="left" class="note_main"><small class="time_date"><%= submitted_date %></small></td>
             </tr>
           </table>
+          <br clear="all">
     <% end %>
 <% end %>
 
