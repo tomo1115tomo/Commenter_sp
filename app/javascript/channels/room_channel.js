@@ -48,7 +48,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   speak: function() {
-    return this.perform('speak', {content: content, title: title, senderoid:senderid, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id});
+    return this.perform('speak', {content: content, title: title, senderoid:senderid, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id, emotion:emotion, expression:expression});
   }
 });
 
