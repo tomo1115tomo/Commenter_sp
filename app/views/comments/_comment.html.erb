@@ -90,7 +90,138 @@
     <% end %>
 
 <% elsif comment.expression == 1 %>
+    <% if @current_user_id == sender.id %>
+        <table class="document" align="right">
+          <tr>
+            <% unless comment.title.nil? %>
+              <th><big><%= "【" + comment.title + "】" %></big></th>
+            <% end %>
+          </tr>
 
+          <tr>
+            <td class="" align="right">
+                  <% if sender.image.url != nil %>
+                    <%= image_tag sender.image.url, :class => "room_icons" %>
+                  <% else %>
+                    <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+                  <% end %>
+                  <strong><%= User.find(comment.sender_id).userid %></strong>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right"><%= submitted_date + " " + submitted_time %></td>
+          </tr>
+
+          <tr>
+            <td><%= safe_join(comment.content.split("\n"),tag(:br)) %></td>
+          </tr>
+        </table>
+        <br clear="all">
+
+    <% else %>
+        <table class="document" align="left">
+          <tr>
+            <% unless comment.title.nil? %>
+              <th><big><%= "【" + comment.title + "】" %></big></th>
+            <% end %>
+          </tr>
+
+          <tr>
+            <td class="" align="right">
+                  <% if 60 < Time.now - comment.created_at %>
+                    <% if sender.image.url != nil %>
+                      <%= image_tag sender.image.url, :class => "room_icons comment_left"%>
+                    <% else %>
+                      <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+                    <% end %>
+                  <% else %>
+                    <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
+                  <% end %>
+
+                  <strong><%= User.find(comment.sender_id).userid %></strong>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="right"><%= submitted_date + " " + submitted_time %></td>
+          </tr>
+
+          <tr>
+            <td><%= safe_join(comment.content.split("\n"),tag(:br)) %></td>
+          </tr>
+        </table>
+        <br clear="all">
+    <% end %>
+<% elsif comment.expression == 3 %>
+    <% if @current_user_id == sender.id %>
+          <table align="right" style="border-collapse:collapse;">
+            <tr>
+              <td class="note_main note_title" >
+                <% unless comment.title.nil? %>
+                  <%= "【" + comment.title + "】" %>
+                <% end %>
+              </td>
+              <td class="note_icon" valign="center" align="right">
+                <strong><%= comment.senderid %></strong>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note_main" align="center">
+                <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
+              </td>
+              <td class="note_icon" align="center">
+                    <% if sender.image.url != nil %>
+                      <%= image_tag sender.image.url, :class => "room_icons" %>
+                    <% else %>
+                      <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+                    <% end %>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="right" class="note_main"><small class="time_date"><%= submitted_date %></small></td>
+
+              <td class="note_icon" align="center">
+                <small class="time_time"><strong><%= submitted_time %></strong></small>
+              </td>
+            </tr>
+          </table>
+    <% else %>
+          <table align="left" style="border-collapse:collapse;">
+            <tr>
+              <td class="note_icon" valign="center" align="right">
+                <strong><%= comment.senderid %></strong>
+              </td>
+                <td class="note_main note_title" >
+                  <% unless comment.title.nil? %>
+                    <%= "【" + comment.title + "】" %>
+                  <% end %>
+                </td>
+            </tr>
+
+            <tr>
+              <td class="note_icon" align="center">
+                    <% if sender.image.url != nil %>
+                      <%= image_tag sender.image.url, :class => "room_icons" %>
+                    <% else %>
+                      <%= image_tag "人物_デフォルト.png", :class => "room_icons" %>
+                    <% end %>
+              </td>
+              <td class="note_main" align="center">
+                <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="note_icon" align="center">
+                <small class="time_time"><strong><%= submitted_time %></strong></small>
+              </td>
+              <td align="left" class="note_main"><small class="time_date"><%= submitted_date %></small></td>
+            </tr>
+          </table>
+    <% end %>
 <% end %>
 
 <br clear="all">
