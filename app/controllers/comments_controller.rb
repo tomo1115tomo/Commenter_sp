@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
       @comment.emotion = 1
     end
 
-    if params[:expression_1] == ""
+    if params["expression_1.x"]
       @comment.expression = 1
     elsif params[:expression_2] == ""
       @comment.expression = 2
