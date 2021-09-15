@@ -6,17 +6,18 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comments_params)
 
-    if params["emotion_0.x"] != nil
+    if params[:emotion_0]
       @comment.emotion = 0
-    elsif params["emotion_1.x"] != nil
+    elsif params[:emotion_1]
       @comment.emotion = 1
-    elsif params["emotion_2.x"] != nil
+    elsif params[:emotion_2]
       @comment.emotion = 2
-    elsif params["emotion_3.x"] != nil
+    elsif params[:emotion_3]
       @comment.emotion = 3
-    elsif params["emotion_4.x"] != nil
+    elsif params[:emotion_4]
       @comment.emotion = 4
     end
+    
     if params[:expression_1]
       @comment.expression = 1
     elsif params[:expression_2]
