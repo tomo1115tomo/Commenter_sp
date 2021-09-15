@@ -9,17 +9,6 @@
     font-size: 20px;
     background-color: black;
 }
-.comment_form_btn{
-  cursor: pointer;
-  width:  70px;
-  height: 65px;
-  border-radius: 50%;
-  background-position: center center;
-  text-align: center;
-}
-.comment_form_btn:hover{
-  transform: translate3d(0, 5px, 0);
-}
 
 .comment_form_title{
     width: 675px;
@@ -36,17 +25,6 @@
     align-self: center;
     font-size: 15px;
     background-color: black;
-}
-.comment_form_long_btn{
-  cursor: pointer;
-  width:  120px;
-  height: 75px;
-  background-position: center center;
-  text-align: center;
-  border-radius: 14px;
-}
-.comment_form_long_btn:hover{
-  transform: translate3d(0, 5px, 0);
 }
 
 .msg_box{

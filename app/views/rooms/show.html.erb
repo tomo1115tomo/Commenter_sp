@@ -55,9 +55,9 @@
               <td colspan="3"><%= form.text_area :content, id:"comment_form_long", class: "comment_form_long", data: { behavior: 'room_speaker'}, placeholder: "ここに本文を入力..." %></td>
             </tr>
             <tr>
-              <td align="center"><%= image_submit_tag("expression_1.png", class:"comment_form_long_btn", name:"expression_1") %></td>
-              <td align="center"><%= image_submit_tag("expression_2.png", class:"comment_form_long_btn", name:"expression_2") %></td>
-              <td align="center"><%= image_submit_tag("expression_3.png", class:"comment_form_long_btn", name:"expression_3") %></td>
+              <td align="center"><%= form.submit(class:"expression_1 comment_form_long_btn", name:"expression_1", value:"") %></td>
+              <td align="center"><%= form.submit(class:"expression_2 comment_form_long_btn", name:"expression_2", value:"") %></td>
+              <td align="center"><%= form.submit(class:"expression_3 comment_form_long_btn", name:"expression_3", value:"") %></td>
             </tr>
           </table>
         <% end %>
@@ -75,11 +75,12 @@
       <table align="center">
         <tr>
           <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
-          <td><%= image_submit_tag("emotion_0.png", class:"comment_form_btn", name:"emotion_0") %></td>
-          <td><%= image_submit_tag("emotion_1.png", class:"comment_form_btn", name:"emotion_1") %></td>
-          <td><%= image_submit_tag("emotion_2.png", class:"comment_form_btn", name:"emotion_2") %></td>
-          <td><%= image_submit_tag("emotion_3.png", class:"comment_form_btn", name:"emotion_3") %></td>
-          <td><%= image_submit_tag("emotion_4.png", class:"comment_form_btn", name:"emotion_4") %></td>
+
+          <td><%= form.submit(class:"emotion_0 comment_form_btn", name:"emotion_0", value:"") %></td>
+          <td><%= form.submit(class:"emotion_1 comment_form_btn", name:"emotion_1", value:"") %></td>
+          <td><%= form.submit(class:"emotion_2 comment_form_btn", name:"emotion_2", value:"") %></td>
+          <td><%= form.submit(class:"emotion_3 comment_form_btn", name:"emotion_3", value:"") %></td>
+          <td><%= form.submit(class:"emotion_4 comment_form_btn", name:"emotion_4", value:"") %></td>
         </tr>
       </table>
     <% end %>

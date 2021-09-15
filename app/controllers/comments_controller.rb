@@ -17,11 +17,11 @@ class CommentsController < ApplicationController
     elsif params["emotion_4.x"] != nil
       @comment.emotion = 4
     end
-    if params["expression_1.x"] != nil
+    if params[:expression_1]
       @comment.expression = 1
-    elsif params["expression_2.x"] != nil
+    elsif params[:expression_2]
       @comment.expression = 2
-    elsif params["expression_3.x"] != nil
+    elsif params[:expression_3]
       @comment.expression = 3
     end
     @comment.save

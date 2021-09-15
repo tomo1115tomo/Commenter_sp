@@ -10,7 +10,6 @@
   emotion_bottom = "emotion_" + comment.emotion.to_s + "_bottom" unless comment.emotion.nil?
 %>
 
-<%= comment.emotion unless comment.emotion.nil? %>
 
 <% if comment.expression == 0 || comment.expression == nil %>
     <% if @current_user_id == sender.id %>
