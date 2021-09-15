@@ -16,8 +16,10 @@ class CommentsController < ApplicationController
       @comment.emotion = 3
     elsif params[:emotion_4]
       @comment.emotion = 4
+    else
+      @comment.emotion = 1
     end
-    
+
     if params[:expression_1]
       @comment.expression = 1
     elsif params[:expression_2]
@@ -41,6 +43,6 @@ class CommentsController < ApplicationController
 
   private
   def comments_params
-    params.require(:comment).permit(:content, :title, :senderid, :sender_id, :receiver_id, :room_id, :image)
+    params.require(:comment).permit(:content, :title, :senderid, :sender_id, :receiver_id, :room_id, :image, :emotion, :expression)
   end
 end
