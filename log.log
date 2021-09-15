@@ -170,3 +170,51 @@ D, [2021-09-15T22:01:48.335684 #45752] DEBUG -- : nil
 D, [2021-09-15T22:02:10.788154 #45752] DEBUG -- : 60
 D, [2021-09-15T22:02:11.384372 #45752] DEBUG -- : MessageBroadcastJob
 D, [2021-09-15T22:02:11.384834 #45752] DEBUG -- : 1
+D, [2021-09-15T22:50:46.666937 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"_DO_ERFswLlpHziID667UnoS-mCyHcL2xN-FRLCNQiu14JyurLBZXt3QsXSiHL2Q5ioxLhkK3yB_CQQpzwXJgA", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "expression.x"=>"36", "expression.y"=>"40", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-15T22:50:46.854718 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T22:50:46.855123 #45752] DEBUG -- : 1
+D, [2021-09-16T01:30:50.332415 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"Y0NbzYs5XHSntIfsvr2M9dKsFFHiUmqxzgv5Hw-8T90qkHhyNuXFkxN7DhATD4o3TpTfH0lFd2d13XhycDTEdg", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T01:30:50.730903 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T01:30:50.731399 #45752] DEBUG -- : 1
+D, [2021-09-16T01:38:51.706907 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"vCqwBXQSaWDr4ol6a4VXZ8BwMsGFxvv09V-d4UJYlMD1-ZO6yc7wh18tAIbGN1GlXEj5jy7R5iJOiRyMPdAfaw", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T01:38:51.876271 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T01:38:51.876583 #45752] DEBUG -- : 1
+D, [2021-09-16T01:42:12.491261 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"3wef0yzvzsy5ZsTDkW_Ej31EmBKTblhOrewsfE4YaEyW1LxskTNXKw2pTT883cJN4XxTXDh5RZgWOq0RMZDj5w", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T01:42:12.650352 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T01:42:12.650567 #45752] DEBUG -- : 1
+D, [2021-09-16T01:54:33.968046 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"r3eFaGh5TeTQJ5wd9X0unYwob_PPVHBi5SSKOD73vPTmpKbX1aXUA2ToFeFYzyhfEBCkvWRDbbRe8gtVQX83Xw", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T01:54:34.452920 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T01:54:34.453631 #45752] DEBUG -- : 1
+D, [2021-09-16T01:57:51.416109 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"d1xDA_R6uwi0bUg8POwmriy8B5a15bie_DNPDigpBMc-j2C8SaYi7wCiwcCRXiBssITM2B7ypUhH5c5jV6GPbA", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T01:57:51.797557 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T01:57:51.797828 #45752] DEBUG -- : 1
+D, [2021-09-16T01:58:03.888711 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"O_boFJeI52PPTfiRgSZos3Sipju46YGv8t7rJPrbU21yJcurKlR-hHuCcW0slG5x6JptdRP-nHlJCGpJhVPYxg", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T01:58:04.099605 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T01:58:04.100214 #45752] DEBUG -- : 1
+D, [2021-09-16T02:11:38.323076 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"tTgQK4t0DCM7U6T7BD69_zkd5RiTCbI8MNvMlGnIha_86zOUNqiVxI-cLQepjLs9pSUuVjger-qLDU35FkAOBA", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T02:11:38.490315 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:11:38.490705 #45752] DEBUG -- : 1
+D, [2021-09-16T02:11:40.750959 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"Jq7x-Y9Nje-7IGSEPASYEYyw2pmKnvX2utNVS5qYFi9vfdJGMpEUCA_v7XiRtp7TEIgR1yGJ6CABBdQm5RCdhA", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"test1", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T02:11:40.916172 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:11:40.916409 #45752] DEBUG -- : 1
+D, [2021-09-16T02:11:44.864654 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"XS_rIt3cymzS1944ZN-aE49pVF-eP0H6qRfenUFZ9UQU_MidYABTi2YYV8TJbZzRE1GfETUoXCwSwV_wPtF-7w", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "button"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T02:11:45.021954 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:11:45.022240 #45752] DEBUG -- : 1
+D, [2021-09-16T02:17:05.394287 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"7raV85b04wQSn4SoFNPnKOjJdM8_FV_hu6Q_QUs-CzanZbZMKyh646ZQDVS5YeHqdPG_gZQCQjcAcr4sNLaAnQ", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""} permitted: false>, "button"=>"emotion_1", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T02:17:05.760924 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:17:05.763097 #45752] DEBUG -- : 1
+D, [2021-09-16T02:17:11.902373 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"ei6uGewVpLMnoMRi_9SgiyPlLvRW626nEy7wsjzV_i8z_Y2mUck9VJNvTZ5SZqZJv93luv38c3Go-HHfQ111hA", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "content"=>""} permitted: false>, "button"=>"emotion_3", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-16T02:17:12.761048 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:17:12.761807 #45752] DEBUG -- : 1
+D, [2021-09-16T02:17:57.031015 #45752] DEBUG -- : expression_1
+D, [2021-09-16T02:17:57.427376 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:17:57.427800 #45752] DEBUG -- : 1
+D, [2021-09-16T02:20:55.837249 #45752] DEBUG -- : expression_2
+D, [2021-09-16T02:20:55.987690 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:20:55.987943 #45752] DEBUG -- : 1
+D, [2021-09-16T02:20:58.985732 #45752] DEBUG -- : expression_3
+D, [2021-09-16T02:20:59.528197 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:20:59.528883 #45752] DEBUG -- : 1
+D, [2021-09-16T02:21:06.384578 #45752] DEBUG -- : emotion_2
+D, [2021-09-16T02:21:07.025446 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:21:07.028494 #45752] DEBUG -- : 2
