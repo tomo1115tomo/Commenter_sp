@@ -124,3 +124,23 @@ D, [2021-09-15T13:26:28.517886 #123756] DEBUG -- : MessageBroadcastJob
 D, [2021-09-15T13:26:28.518385 #123756] DEBUG -- : 1
 D, [2021-09-15T13:40:50.838897 #123756] DEBUG -- : MessageBroadcastJob
 D, [2021-09-15T13:40:50.839225 #123756] DEBUG -- : 1
+D, [2021-09-15T20:13:07.249002 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:13:07.249209 #45752] DEBUG -- : nil
+D, [2021-09-15T20:14:14.442628 #45752] DEBUG -- : #<ActionController::Parameters {"content"=>"", "title"=>"", "senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13"} permitted: true>
+D, [2021-09-15T20:14:14.686120 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:14:14.686390 #45752] DEBUG -- : nil
+D, [2021-09-15T20:15:54.521310 #45752] DEBUG -- : nil
+D, [2021-09-15T20:15:54.737861 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:15:54.738174 #45752] DEBUG -- : nil
+D, [2021-09-15T20:17:17.718812 #45752] DEBUG -- : nil
+D, [2021-09-15T20:17:17.869410 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:17:17.869791 #45752] DEBUG -- : nil
+D, [2021-09-15T20:17:46.737348 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"t9nLVzbSVDsrf1MrS9ZreMEAGVhC0-DoOOwJjsCk23H-Cujoiw7N3J-w2tfmZG26XTjSFunE_T6DOojjvyxQ2g", "comment"=>{"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""}, "expression_1"=>"", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-15T20:17:46.917636 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:17:46.917801 #45752] DEBUG -- : nil
+D, [2021-09-15T20:26:03.065559 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:26:03.065880 #45752] DEBUG -- : 1
+D, [2021-09-15T20:26:10.060557 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:26:10.060899 #45752] DEBUG -- : 1
+D, [2021-09-15T20:26:13.974397 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T20:26:13.974782 #45752] DEBUG -- : 1
