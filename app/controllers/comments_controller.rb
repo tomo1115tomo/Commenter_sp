@@ -6,25 +6,25 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.create(comments_params)
 
-    if params[:emotion_0] == ""
+    if params[:emotion_0]
       @comment.emotion = 0
-    elsif params[:emotion_1] == ""
+    elsif params[:emotion_1]
       @comment.emotion = 1
-    elsif params[:emotion_2] == ""
+    elsif params[:emotion_2]
       @comment.emotion = 2
-    elsif params[:emotion_3] == ""
+    elsif params[:emotion_3]
       @comment.emotion = 3
-    elsif params[:emotion_4] == ""
+    elsif params[:emotion_4]
       @comment.emotion = 4
     else
       @comment.emotion = 1
     end
 
-    if params["expression_1.x"]
+    if params[:expression_1]
       @comment.expression = 1
-    elsif params[:expression_2] == ""
+    elsif params[:expression_2]
       @comment.expression = 2
-    elsif params[:expression_3] == ""
+    elsif params[:expression_3]
       @comment.expression = 3
     end
     @comment.save

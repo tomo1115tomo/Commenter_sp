@@ -154,3 +154,19 @@ D, [2021-09-15T21:32:55.159261 #45752] DEBUG -- : MessageBroadcastJob
 D, [2021-09-15T21:32:55.159704 #45752] DEBUG -- : 1
 D, [2021-09-15T21:33:09.278015 #45752] DEBUG -- : MessageBroadcastJob
 D, [2021-09-15T21:33:09.278194 #45752] DEBUG -- : 1
+D, [2021-09-15T21:57:40.910646 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T21:57:40.911044 #45752] DEBUG -- : 1
+D, [2021-09-15T21:57:42.907918 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T21:57:42.908227 #45752] DEBUG -- : 1
+D, [2021-09-15T21:58:24.720205 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T21:58:24.720553 #45752] DEBUG -- : 1
+D, [2021-09-15T21:58:29.786453 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T21:58:29.786731 #45752] DEBUG -- : 1
+D, [2021-09-15T22:00:59.114341 #45752] DEBUG -- : #<ActionController::Parameters {"authenticity_token"=>"daNrAVrG21YxG9KfNhfzhN54onvbqFfQvSWeQUT4LWk8cEi-5xpCsYXUW2ObpfVGQkBpNXC_SgYG8x8sO3Cmwg", "comment"=>#<ActionController::Parameters {"senderid"=>"nagaya", "sender_id"=>"5", "receiver_id"=>"2", "room_id"=>"13", "title"=>"", "content"=>""} permitted: false>, "x"=>"31", "y"=>"37", "controller"=>"comments", "action"=>"create"} permitted: false>
+D, [2021-09-15T22:00:59.430829 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T22:00:59.431391 #45752] DEBUG -- : 1
+D, [2021-09-15T22:01:48.335342 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T22:01:48.335684 #45752] DEBUG -- : nil
+D, [2021-09-15T22:02:10.788154 #45752] DEBUG -- : 60
+D, [2021-09-15T22:02:11.384372 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-15T22:02:11.384834 #45752] DEBUG -- : 1
