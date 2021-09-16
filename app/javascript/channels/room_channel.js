@@ -40,7 +40,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
 
     }
     else if(current_user_id == data['sender_id']){
-      window.location.reload(true);
+      window.location.reload(false);
     }
 
     const msg_area = document.getElementById('msg_box');
