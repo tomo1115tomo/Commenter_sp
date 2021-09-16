@@ -5,7 +5,7 @@ class MessageBroadcastJob < ApplicationJob
   def perform(comment)
     logger = Logger.new('log.log')
     logger.debug("MessageBroadcastJob")
-    logger.debug(comment.emotion)
+    logger.debug(comment)
     create_date = get_comment_date(comment.created_at)
     create_time = get_comment_time(comment.created_at)
     tmp = create_date + " " + create_time
@@ -15,7 +15,7 @@ class MessageBroadcastJob < ApplicationJob
 
   private
   def render_message(comment)
-    ApplicationController.renderer.render(partial: 'comments/comment', locals: { comment: comment })
+    ApplicationController.renderer.render(partial: 'comments/comment', locals: { comment: comment, emotion:comment.emotion, expression:comment.expression })
   end
 
   private

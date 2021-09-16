@@ -28,6 +28,7 @@
     room_id = "comments" + roomid.to_s + "_" + @room.user_id1.to_s + "_" + @room.user_id2.to_s
   %>
 
+
   <div class="item-list">
     <center>
       <div class="">
@@ -88,7 +89,7 @@
         <tr>
           <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
 
-          <td><%= button_tag type: :submit, class: "", value:"emotion_0" do %>
+          <td><%= button_tag type: :submit, class: "", value:"emotion_0", id:"emotion_0" do %>
             <%= image_tag "emotion_0.png", class:"emotion_0 comment_form_btn", name:"emotion_0" %>
           <% end %></td>
           <td><%= button_tag type: :submit, class: "", value:"emotion_1" do %>

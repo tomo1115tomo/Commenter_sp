@@ -218,3 +218,87 @@ D, [2021-09-16T02:20:59.528883 #45752] DEBUG -- : 1
 D, [2021-09-16T02:21:06.384578 #45752] DEBUG -- : emotion_2
 D, [2021-09-16T02:21:07.025446 #45752] DEBUG -- : MessageBroadcastJob
 D, [2021-09-16T02:21:07.028494 #45752] DEBUG -- : 2
+D, [2021-09-16T02:45:21.711937 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T02:45:21.712591 #45752] DEBUG -- : #<Comment id: 753, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-15 17:45:21.053733000 +0000", updated_at: "2021-09-15 17:45:21.103033000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 3, expression: 0, title: nil>
+D, [2021-09-16T03:16:35.156754 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T03:16:35.159969 #45752] DEBUG -- : #<Comment id: 754, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-15 18:16:34.628069000 +0000", updated_at: "2021-09-15 18:16:34.678270000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 3, expression: 0, title: nil>
+D, [2021-09-16T03:17:07.601884 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T03:17:07.602222 #45752] DEBUG -- : #<Comment id: 755, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-15 18:17:07.255272000 +0000", updated_at: "2021-09-15 18:17:07.282156000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-16T03:18:04.544573 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T03:18:04.545038 #45752] DEBUG -- : #<Comment id: 756, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-15 18:18:04.177195000 +0000", updated_at: "2021-09-15 18:18:04.208541000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-16T03:18:08.991857 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T03:18:08.994870 #45752] DEBUG -- : #<Comment id: 757, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-15 18:18:08.409825000 +0000", updated_at: "2021-09-15 18:18:08.448608000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 3, expression: 0, title: nil>
+D, [2021-09-16T12:25:18.165895 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T12:25:18.166140 #45752] DEBUG -- : #<Comment id: 758, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-16 03:25:17.987820000 +0000", updated_at: "2021-09-16 03:25:18.009922000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 1, expression: 1, title: "">
+D, [2021-09-16T12:25:26.884831 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T12:25:26.885247 #45752] DEBUG -- : #<Comment id: 759, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-16 03:25:26.712054000 +0000", updated_at: "2021-09-16 03:25:26.736816000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-16T19:22:40.360945 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T19:22:40.364197 #45752] DEBUG -- : #<Comment id: 760, content: "長文長文\r\n\r\n長文長文\r\n\r\n長文長文\r\n\r\n長文長文\r\n\r\n長文長文", senderid: "nagaya", receiverid: nil, created_at: "2021-09-16 10:22:39.930816000 +0000", updated_at: "2021-09-16 10:22:39.971352000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 1, expression: 1, title: "長文テスト">
+D, [2021-09-16T19:23:00.789343 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T19:23:00.789826 #45752] DEBUG -- : #<Comment id: 761, content: "こんばんわ", senderid: "nagaya", receiverid: nil, created_at: "2021-09-16 10:23:00.385529000 +0000", updated_at: "2021-09-16 10:23:00.427235000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 3, expression: 0, title: nil>
+D, [2021-09-16T19:23:14.569468 #45752] DEBUG -- : MessageBroadcastJob
+D, [2021-09-16T19:23:14.569872 #45752] DEBUG -- : #<Comment id: 762, content: "やっほー", senderid: "nagaya", receiverid: nil, created_at: "2021-09-16 10:23:14.164175000 +0000", updated_at: "2021-09-16 10:23:14.199866000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 0, expression: 0, title: nil>
+D, [2021-09-17T01:11:03.866458 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:11:03.866862 #104968] DEBUG -- : #<Comment id: 763, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:11:02.765949000 +0000", updated_at: "2021-09-16 16:11:02.765949000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:11:04.191239 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:11:04.191633 #104968] DEBUG -- : #<Comment id: 764, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:11:03.892245000 +0000", updated_at: "2021-09-16 16:11:03.892245000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:11:07.778636 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:11:07.778870 #104968] DEBUG -- : #<Comment id: 765, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:11:07.502946000 +0000", updated_at: "2021-09-16 16:11:07.502946000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:11:15.847637 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:11:15.847997 #104968] DEBUG -- : #<Comment id: 766, content: "a", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:11:15.562013000 +0000", updated_at: "2021-09-16 16:11:15.562013000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:14:06.554920 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:14:06.555658 #104968] DEBUG -- : #<Comment id: 767, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:14:06.279676000 +0000", updated_at: "2021-09-16 16:14:06.279676000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:15:49.857334 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:15:49.858029 #104968] DEBUG -- : #<Comment id: 768, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:15:49.585039000 +0000", updated_at: "2021-09-16 16:15:49.585039000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:16:50.801297 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:16:50.801758 #104968] DEBUG -- : #<Comment id: 769, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:16:50.528947000 +0000", updated_at: "2021-09-16 16:16:50.528947000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:17:47.621901 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:17:47.622367 #104968] DEBUG -- : #<Comment id: 770, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:17:47.342043000 +0000", updated_at: "2021-09-16 16:17:47.342043000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:18:18.360805 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:18:18.361239 #104968] DEBUG -- : #<Comment id: 771, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:18:18.084434000 +0000", updated_at: "2021-09-16 16:18:18.084434000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:43.750224 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:43.750905 #104968] DEBUG -- : #<Comment id: 772, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:43.482127000 +0000", updated_at: "2021-09-16 16:24:43.482127000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:46.202002 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:46.202296 #104968] DEBUG -- : #<Comment id: 773, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:45.933182000 +0000", updated_at: "2021-09-16 16:24:45.933182000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:46.947086 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:46.947757 #104968] DEBUG -- : #<Comment id: 774, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:46.669917000 +0000", updated_at: "2021-09-16 16:24:46.669917000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:47.544319 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:47.544685 #104968] DEBUG -- : #<Comment id: 775, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:47.276794000 +0000", updated_at: "2021-09-16 16:24:47.276794000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:48.374987 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:48.375531 #104968] DEBUG -- : #<Comment id: 776, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:48.101841000 +0000", updated_at: "2021-09-16 16:24:48.101841000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:48.746282 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:48.746657 #104968] DEBUG -- : #<Comment id: 777, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:48.430358000 +0000", updated_at: "2021-09-16 16:24:48.430358000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:49.079482 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:49.079895 #104968] DEBUG -- : #<Comment id: 778, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:48.616395000 +0000", updated_at: "2021-09-16 16:24:48.616395000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:49.299525 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:49.299983 #104968] DEBUG -- : #<Comment id: 779, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:48.828217000 +0000", updated_at: "2021-09-16 16:24:48.828217000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:49.511715 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:49.512135 #104968] DEBUG -- : #<Comment id: 780, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:48.998943000 +0000", updated_at: "2021-09-16 16:24:48.998943000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:49.633067 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:49.633424 #104968] DEBUG -- : #<Comment id: 781, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:49.151502000 +0000", updated_at: "2021-09-16 16:24:49.151502000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:49.736646 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:49.736934 #104968] DEBUG -- : #<Comment id: 782, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:49.330708000 +0000", updated_at: "2021-09-16 16:24:49.330708000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:24:53.661271 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:24:53.661588 #104968] DEBUG -- : #<Comment id: 783, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:24:53.377003000 +0000", updated_at: "2021-09-16 16:24:53.377003000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:25:23.963009 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:25:23.963482 #104968] DEBUG -- : #<Comment id: 784, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:25:23.682271000 +0000", updated_at: "2021-09-16 16:25:23.682271000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:27:02.805448 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:27:02.805976 #104968] DEBUG -- : #<Comment id: 785, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:27:02.418985000 +0000", updated_at: "2021-09-16 16:27:02.451073000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T01:27:07.674810 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:27:07.675221 #104968] DEBUG -- : #<Comment id: 786, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:27:07.406904000 +0000", updated_at: "2021-09-16 16:27:07.406904000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: "">
+D, [2021-09-17T01:28:11.310373 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:28:11.311855 #104968] DEBUG -- : #<Comment id: 787, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:28:10.946146000 +0000", updated_at: "2021-09-16 16:28:10.979865000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 1, title: "">
+D, [2021-09-17T01:28:18.469434 #104968] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:28:18.469775 #104968] DEBUG -- : #<Comment id: 788, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:28:18.114818000 +0000", updated_at: "2021-09-16 16:28:18.158305000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 4, expression: 0, title: nil>
+D, [2021-09-17T01:32:56.681343 #70924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:32:56.682321 #70924] DEBUG -- : #<Comment id: 789, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:32:53.242567000 +0000", updated_at: "2021-09-16 16:32:53.285396000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: nil>
+D, [2021-09-17T01:33:43.290159 #70924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:33:43.290682 #70924] DEBUG -- : #<Comment id: 790, content: "", senderid: "nagaya", receiverid: nil, created_at: "2021-09-16 16:33:42.919281000 +0000", updated_at: "2021-09-16 16:33:42.951512000 +0000", roomid: nil, receiver_id: 2, sender_id: 5, room_id: 13, emotion: 3, expression: 0, title: nil>
+D, [2021-09-17T01:36:06.364108 #70924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:36:06.364416 #70924] DEBUG -- : #<Comment id: 791, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:36:05.929506000 +0000", updated_at: "2021-09-16 16:36:05.975626000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 2, expression: 0, title: nil>
+D, [2021-09-17T01:36:11.781281 #70924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:36:11.781884 #70924] DEBUG -- : #<Comment id: 792, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:36:11.405431000 +0000", updated_at: "2021-09-16 16:36:11.440779000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 3, expression: 0, title: nil>
+D, [2021-09-17T01:36:14.736303 #70924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:36:14.737502 #70924] DEBUG -- : #<Comment id: 793, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:36:14.366706000 +0000", updated_at: "2021-09-16 16:36:14.393752000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 4, expression: 0, title: nil>
+D, [2021-09-17T01:36:22.586806 #70924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T01:36:22.587318 #70924] DEBUG -- : #<Comment id: 794, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:36:22.204475000 +0000", updated_at: "2021-09-16 16:36:22.241320000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: nil>
