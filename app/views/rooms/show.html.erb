@@ -88,11 +88,10 @@
       <table align="center">
         <tr>
           <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
-
-          <td><%= form.radio_button :emotion, 0, class:"emotion_0" %></td>
-          <td><%= form.radio_button :emotion, 1, class:"emotion_1" %></td>
-          <td><%= form.radio_button :emotion, 3, class:"emotion_3" %></td>
-          <td><%= form.radio_button :emotion, 4, class:"emotion_4" %></td>
+          <td><label><%= form.radio_button :emotion, 0, class:"radio" %><%= image_tag "emotion_0.png", class:"radio_image" %></label></td>
+          <td><label><%= form.radio_button :emotion, 1, class:"radio" %><%= image_tag "emotion_1.png", class:"radio_image" %></label></td>
+          <td><label><%= form.radio_button :emotion, 3, class:"radio" %><%= image_tag "emotion_3.png", class:"radio_image" %></label></td>
+          <td><label><%= form.radio_button :emotion, 4, class:"radio" %><%= image_tag "emotion_4.png", class:"radio_image" %></label></td>
 
           <td><%= form.submit %></td>
         </tr>

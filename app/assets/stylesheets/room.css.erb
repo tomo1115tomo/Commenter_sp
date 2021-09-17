@@ -43,6 +43,7 @@
   background-size: cover;
   height: 70px;
   width: 70px;
+  display: inline-block;
 }
 .emotion_1{
   background-image: url("<%= asset_path('emotion_1.png') %>");
@@ -67,4 +68,47 @@
   background-size: cover;
   height: 70px;
   width: 70px;
+}
+input[type=radio]+label:before{
+    content: "";
+    display: inline-block;
+    background-size: contain;
+    width: 140px;
+    height: 140px;
+}
+input[type=radio][value=0]+label:before{
+    background-image: url("<%= asset_path('emotion_0.png') %>");
+}
+input[type=radio][value=1]+label:before{
+    background-image: url("<%= asset_path('emotion_1.png') %>");
+}
+input[type=radio][value=3]+label:before{
+    background-image: url("<%= asset_path('emotion_3.png') %>");
+}
+input[type=radio][value=4]+label:before{
+    background-image: url("<%= asset_path('emotion_4.png') %>");
+}
+input[type=radio]:checked+label::before{
+    border: 3px solid #000;
+    box-sizing: border-box;
+}
+
+
+.radio{
+  display: none;
+}
+
+.radio_image{
+
+    height: 70px;
+    width: 70px;
+}
+
+.radio + .radio_image{
+	border: 3px black solid;
+}
+
+.radio:checked + .radio_image{
+
+	border: 3px #ff0000 solid;
 }
