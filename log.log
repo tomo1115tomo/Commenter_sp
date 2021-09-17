@@ -306,3 +306,53 @@ D, [2021-09-17T01:45:18.664158 #70924] DEBUG -- : MessageBroadcastJob
 D, [2021-09-17T01:45:18.664576 #70924] DEBUG -- : #<Comment id: 795, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:45:18.284906000 +0000", updated_at: "2021-09-16 16:45:18.316196000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: 0, title: nil>
 D, [2021-09-17T01:45:27.122296 #70924] DEBUG -- : MessageBroadcastJob
 D, [2021-09-17T01:45:27.123329 #70924] DEBUG -- : #<Comment id: 796, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-16 16:45:26.756892000 +0000", updated_at: "2021-09-16 16:45:26.787215000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 4, expression: 0, title: nil>
+D, [2021-09-17T14:50:51.771799 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T14:50:51.772303 #105924] DEBUG -- : #<Comment id: 797, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 05:50:51.549919000 +0000", updated_at: "2021-09-17 05:50:51.584466000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T14:52:21.183478 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T14:52:21.183686 #105924] DEBUG -- : #<Comment id: 798, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 05:52:21.009388000 +0000", updated_at: "2021-09-17 05:52:21.032898000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T14:57:42.109168 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T14:57:42.109407 #105924] DEBUG -- : #<Comment id: 799, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 05:57:41.926738000 +0000", updated_at: "2021-09-17 05:57:41.957826000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T14:57:47.930924 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T14:57:47.931317 #105924] DEBUG -- : #<Comment id: 800, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 05:57:47.755086000 +0000", updated_at: "2021-09-17 05:57:47.776932000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:07:03.714842 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:07:03.715205 #105924] DEBUG -- : #<Comment id: 801, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:07:03.527222000 +0000", updated_at: "2021-09-17 06:07:03.551546000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:07:08.449134 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:07:08.449472 #105924] DEBUG -- : #<Comment id: 802, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:07:08.275196000 +0000", updated_at: "2021-09-17 06:07:08.301449000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:08:37.257517 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:08:37.257970 #105924] DEBUG -- : #<Comment id: 803, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:08:37.082031000 +0000", updated_at: "2021-09-17 06:08:37.104013000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:09:28.121523 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:09:28.121851 #105924] DEBUG -- : #<Comment id: 804, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:09:27.949345000 +0000", updated_at: "2021-09-17 06:09:27.968020000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:09:35.299197 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:09:35.299411 #105924] DEBUG -- : #<Comment id: 805, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:09:35.133752000 +0000", updated_at: "2021-09-17 06:09:35.156548000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:09:52.016294 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:09:52.016769 #105924] DEBUG -- : #<Comment id: 806, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:09:51.849620000 +0000", updated_at: "2021-09-17 06:09:51.871286000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: 0, title: nil>
+D, [2021-09-17T15:11:17.532015 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13"} permitted: true>
+D, [2021-09-17T15:11:17.753271 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:11:17.753666 #105924] DEBUG -- : #<Comment id: 807, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:11:17.539940000 +0000", updated_at: "2021-09-17 06:11:17.539940000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: nil, expression: nil, title: nil>
+D, [2021-09-17T15:11:53.169800 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13"} permitted: true>
+D, [2021-09-17T15:11:53.318936 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:11:53.319405 #105924] DEBUG -- : #<Comment id: 808, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:11:53.170697000 +0000", updated_at: "2021-09-17 06:11:53.170697000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: nil, expression: nil, title: nil>
+D, [2021-09-17T15:11:56.174829 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13"} permitted: true>
+D, [2021-09-17T15:11:56.323157 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:11:56.323586 #105924] DEBUG -- : #<Comment id: 809, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:11:56.175254000 +0000", updated_at: "2021-09-17 06:11:56.175254000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: nil, expression: nil, title: nil>
+D, [2021-09-17T15:12:39.524412 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"type button value 0 class emotion_0"} permitted: true>
+D, [2021-09-17T15:12:39.693508 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:12:39.698603 #105924] DEBUG -- : #<Comment id: 810, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:12:39.525102000 +0000", updated_at: "2021-09-17 06:12:39.525102000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: nil, title: nil>
+D, [2021-09-17T15:13:14.102607 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"type button value 3 class emotion_3"} permitted: true>
+D, [2021-09-17T15:13:14.260214 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:13:14.260496 #105924] DEBUG -- : #<Comment id: 811, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:13:14.103554000 +0000", updated_at: "2021-09-17 06:13:14.103554000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: nil, title: nil>
+D, [2021-09-17T15:13:32.051687 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"type button value 3 class emotion_3"} permitted: true>
+D, [2021-09-17T15:13:32.222696 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:13:32.222866 #105924] DEBUG -- : #<Comment id: 812, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:13:32.052491000 +0000", updated_at: "2021-09-17 06:13:32.052491000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: nil, title: nil>
+D, [2021-09-17T15:14:36.183533 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"type button name radio value 3 class emotion_3"} permitted: true>
+D, [2021-09-17T15:14:36.347952 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:14:36.348191 #105924] DEBUG -- : #<Comment id: 813, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:14:36.184046000 +0000", updated_at: "2021-09-17 06:14:36.184046000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: nil, title: nil>
+D, [2021-09-17T15:20:23.737365 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"0"} permitted: true>
+D, [2021-09-17T15:20:23.898507 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:20:23.899179 #105924] DEBUG -- : #<Comment id: 814, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:20:23.737805000 +0000", updated_at: "2021-09-17 06:20:23.737805000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 0, expression: nil, title: nil>
+D, [2021-09-17T15:20:32.433926 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"1"} permitted: true>
+D, [2021-09-17T15:20:32.586397 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:20:32.586527 #105924] DEBUG -- : #<Comment id: 815, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:20:32.434643000 +0000", updated_at: "2021-09-17 06:20:32.434643000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 1, expression: nil, title: nil>
+D, [2021-09-17T15:20:36.908636 #105924] DEBUG -- : #<ActionController::Parameters {"content"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"4"} permitted: true>
+D, [2021-09-17T15:20:37.066755 #105924] DEBUG -- : MessageBroadcastJob
+D, [2021-09-17T15:20:37.067283 #105924] DEBUG -- : #<Comment id: 816, content: "", senderid: "peppe", receiverid: nil, created_at: "2021-09-17 06:20:36.909086000 +0000", updated_at: "2021-09-17 06:20:36.909086000 +0000", roomid: nil, receiver_id: 5, sender_id: 2, room_id: 13, emotion: 4, expression: nil, title: nil>

@@ -89,21 +89,12 @@
         <tr>
           <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
 
-          <td><%= button_tag type: :submit, class: "", value:"emotion_0", id:"emotion_0" do %>
-            <%= image_tag "emotion_0.png", class:"emotion_0 comment_form_btn", name:"emotion_0" %>
-          <% end %></td>
-          <td><%= button_tag type: :submit, class: "", value:"emotion_1" do %>
-            <%= image_tag "emotion_1.png", class:"emotion_1 comment_form_btn", name:"emotion_1" %>
-          <% end %></td>
-          <td><%= button_tag type: :submit, class: "", value:"emotion_2" do %>
-            <%= image_tag "emotion_2.png", class:"emotion_2 comment_form_btn", name:"emotion_2" %>
-          <% end %></td>
-          <td><%= button_tag type: :submit, class: "", value:"emotion_3" do %>
-            <%= image_tag "emotion_3.png", class:"emotion_3 comment_form_btn", name:"emotion_3" %>
-          <% end %></td>
-          <td><%= button_tag type: :submit, class: "", value:"emotion_4" do %>
-            <%= image_tag "emotion_4.png", class:"emotion_4 comment_form_btn", name:"emotion_4" %>
-          <% end %></td>
+          <td><%= form.radio_button :emotion, 0, class:"emotion_0" %></td>
+          <td><%= form.radio_button :emotion, 1, class:"emotion_1" %></td>
+          <td><%= form.radio_button :emotion, 3, class:"emotion_3" %></td>
+          <td><%= form.radio_button :emotion, 4, class:"emotion_4" %></td>
+
+          <td><%= form.submit %></td>
         </tr>
       </table>
     <% end %>

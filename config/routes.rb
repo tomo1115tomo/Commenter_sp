@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'users/edit2' => 'users#edit2', as: :user_update2
   get 'users/select' => 'users#select'
 
+  
+
   get '/' => 'users#index'
 
   controller :sessions do
