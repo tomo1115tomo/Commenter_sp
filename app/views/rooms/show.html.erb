@@ -32,52 +32,49 @@
   <div class="item-list">
     <center>
       <div class="">
-          <div id="msg_box" class="msg_box" align="">
-            <div id='<%= room_id%>'>
-              <%= render @comments %>
-            </div>
+        <div id="msg_box" class="msg_box" align="">
+          <div id='<%= room_id%>'>
+            <%= render @comments %>
           </div>
+        </div>
       </div>
     </center>
 
     <center>
       <div class="">
         <%= form_with(model: Comment.new(), id:"form" ) do |form| %>
+        <%= form.hidden_field :emotion, :value => 2 %>
+        <%= form.hidden_field :expression, :value => 0 %>
           <table align="center">
+            <%= form.hidden_field :senderid, :value => senderid, id:"form_senderid" %>
+            <%= form.hidden_field :sender_id, :value => sender_id, id:"form_sender_id" %>
+            <%= form.hidden_field :receiver_id, :value => receiver_id, id:"form_receiver_id" %>
+            <%= form.hidden_field :room_id, :value => roomid, id:"form_room_id" %>
             <tr>
-              <td colspan="3"><%= form.text_field :title, id:"comment_form_title", class: "comment_form_title", data: { behavior: 'room_speaker'}, placeholder: "ここに件名を入力..." %></td>
+              <td colspan="8"><%= form.text_field :title, id:"comment_form_title", class: "comment_form_title", oninput:"check_btn()", data: { behavior: 'room_speaker'}, placeholder: "ここに件名を入力..." %></td>
             </tr>
             <tr>
-              <td colspan="3"><%= form.text_area :content, id:"comment_form_long", class: "comment_form_long", data: { behavior: 'room_speaker'}, placeholder: "ここに本文を入力..." %></td>
+              <td colspan="8"><%= form.text_area :long_content, id:"comment_form_long", class: "comment_form_long", oninput:"check_btn()", data: { behavior: 'room_speaker'}, placeholder: "ここに本文を入力..." %></td>
             </tr>
             <tr>
-              <td align="center"><label><%= form.radio_button :expression, 1, class:"radio" %><%= image_tag "expression_1.png", class:"radio_expression" %></label></td>
-              <td align="center"><label><%= form.radio_button :expression, 2, class:"radio" %><%= image_tag "expression_2.png", class:"radio_expression" %></label></td>
-              <td align="center"><label><%= form.radio_button :expression, 3, class:"radio" %><%= image_tag "expression_3.png", class:"radio_expression" %></label></td>
+              <td align="center"><label><%= form.radio_button :expression, 0, id:"expression_0", class:"radio", onclick:"check_btn()", checked:true %><%= image_tag "expression_0.png", class:"radio_expression" %></label></td>
+              <td align="center"><label><%= form.radio_button :expression, 1, id:"expression_1", class:"radio", onclick:"check_btn()" %><%= image_tag "expression_1.png", class:"radio_expression" %></label></td>
+              <td align="center"><label><%= form.radio_button :expression, 2, id:"expression_2", class:"radio", onclick:"check_btn()" %><%= image_tag "expression_2.png", class:"radio_expression" %></label></td>
+              <td align="center"><label><%= form.radio_button :expression, 3, id:"expression_3", class:"radio", onclick:"check_btn()" %><%= image_tag "expression_3.png", class:"radio_expression" %></label></td>
+              <td><label><%= form.radio_button :emotion, 0, class:"radio" %><%= image_tag "emotion_0.png", class:"radio_emotion", id:"emotion_0", onclick:"check_radio_btn()" %></label></td>
+              <td><label><%= form.radio_button :emotion, 1, class:"radio" %><%= image_tag "emotion_1.png", class:"radio_emotion", id:"emotion_1", onclick:"check_radio_btn()" %></label></td>
+              <td><label><%= form.radio_button :emotion, 3, class:"radio" %><%= image_tag "emotion_3.png", class:"radio_emotion", id:"emotion_3", onclick:"check_radio_btn()" %></label></td>
+              <td><label><%= form.radio_button :emotion, 4, class:"radio" %><%= image_tag "emotion_4.png", class:"radio_emotion", id:"emotion_4", onclick:"check_radio_btn()" %></label></td>
+            </tr>
+            <tr>
+              <td colspan="7"><%= form.text_area :content, id:"comment_form", class: "comment_form", oninput:"check_btn()", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
+              <td><%= image_submit_tag "submit.png", class:"submit_button", id:"submit_button", disabled:true%></td>
             </tr>
           </table>
       </div>
     </center>
   </div>
-
-  <div name="msg_form">
-      <%= form.hidden_field :senderid, :value => senderid, id:"form_senderid" %>
-      <%= form.hidden_field :sender_id, :value => sender_id, id:"form_sender_id" %>
-      <%= form.hidden_field :receiver_id, :value => receiver_id, id:"form_receiver_id" %>
-      <%= form.hidden_field :room_id, :value => roomid, id:"form_room_id" %>
-
-      <table align="center">
-        <tr>
-          <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
-          <td><label><%= form.radio_button :emotion, 0, class:"radio" %><%= image_tag "emotion_0.png", class:"radio_emotion" %></label></td>
-          <td><label><%= form.radio_button :emotion, 1, class:"radio" %><%= image_tag "emotion_1.png", class:"radio_emotion" %></label></td>
-          <td><label><%= form.radio_button :emotion, 3, class:"radio" %><%= image_tag "emotion_3.png", class:"radio_emotion" %></label></td>
-          <td><label><%= form.radio_button :emotion, 4, class:"radio" %><%= image_tag "emotion_4.png", class:"radio_emotion" %></label></td>
-          <td><%= image_submit_tag "submit.png", class:"submit_button" %></td>
-        </tr>
-      </table>
     <% end %>
-  </div>
 
   <% else %>
     <center><h2>申し訳ありません　このページは表示できません…  </h2></center>
@@ -91,4 +88,47 @@
   window.addEventListener('load', function() {
     document.getElementById('comment_form').focus();
   })
+
+  function check_radio_btn(){
+    var emotion_0 = document.getElementById('emotion_0');
+    var emotion_1 = document.getElementById('emotion_1');
+    var emotion_3 = document.getElementById('emotion_3');
+    var emotion_4 = document.getElementById('emotion_4');
+    if(emotion_0.checked){
+      emotion_0.checked = false;
+    }
+  }
+
+
+  function check_btn(){
+    var comment_form = document.getElementById('comment_form').value;
+    var comment_form_long = document.getElementById('comment_form_long').value;
+    var comment_form_title = document.getElementById('comment_form_title').value;
+    var expression_0 = document.getElementById('expression_0');
+    var expression_1 = document.getElementById('expression_1');
+    var expression_2 = document.getElementById('expression_2');
+    var expression_3 = document.getElementById('expression_3');
+
+    const submit_button = document.getElementById('submit_button');
+
+    if(expression_0.checked){
+      if(comment_form){
+        submit_button.disabled = false;
+      }
+      else{
+        submit_button.disabled = true;
+      }
+    }
+    else if(expression_1.checked || expression_2.checked || expression_3.checked){
+      if(comment_form_long && comment_form_title){
+        submit_button.disabled = false;
+      }
+      else{
+        submit_button.disabled = true;
+      }
+    }
+
+
+
+  }
 </script>

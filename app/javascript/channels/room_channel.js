@@ -27,7 +27,13 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
       var follow_list_id = "follow_list_" + String(data['receiver_id'])
       var follow_list_area = document.getElementById(follow_list_id)
 
-      var msg_content = '<td align="right" style="color:white">' + data['created_at'] + '</td>' + '<td colspan="3" style="color:white">' + data['content'] + '</td>';
+      if(Number(data['expression']) == 0){
+        var msg_content = '<td align="right" style="color:white">' + data['created_at'] + '</td>' + '<td colspan="4" style="color:white">' + data['content'] + '</td>';
+      }
+      else{
+        var title_length = String(data['title']).length;
+        var msg_content = '<td align="right" style="color:white">' + data['created_at'] + '</td>' + '<td colspan="4" style="color:white">' + "件名" + "【" + data['title'] + "】" + String(data['long_content']).substr(0, 40 - title_length) + "...." + '</td>';
+      }
       recent2_msg_area.innerHTML = msg_content;
 
       recent1_msg_area.remove();
@@ -46,7 +52,7 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
   },
 
   speak: function() {
-    return this.perform('speak', {content: content, title: title, senderoid:senderid, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id, emotion:emotion, expression:expression});
+    return this.perform('speak', {content: content, title: title, long_content:long_content, senderoid:senderid, sender_id:sender_id, receiver_id:receiver_id, room_id:room_id, emotion:emotion, expression:expression});
   }
 });
 

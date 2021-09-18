@@ -108,7 +108,9 @@
           </tr>
 
           <tr>
-            <td><%= safe_join(comment.content.split("\n"),tag(:br)) %></td>
+            <% if comment.long_content != nil %>
+              <td><%= safe_join(comment.long_content.split("\n"),tag(:br)) %></td>
+            <% end %>
           </tr>
         </table>
         <br clear="all">
@@ -141,7 +143,9 @@
           </tr>
 
           <tr>
-            <td><%= safe_join(comment.content.split("\n"),tag(:br)) %></td>
+            <% if comment.long_content != nil %>
+              <td><%= safe_join(comment.long_content.split("\n"),tag(:br)) %></td>
+            <% end %>
           </tr>
         </table>
         <br clear="all">
@@ -163,7 +167,9 @@
 
             <tr>
               <td class="note_main" align="center">
-                <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
+                <% if comment.long_content != nil %>
+                  <big><strong><%= safe_join(comment.long_content.split("\n"),tag(:br)) %></strong></big>
+                <% end %>
               </td>
               <td class="note_icon" align="center">
                     <% if sender.image.url != nil %>
@@ -205,7 +211,9 @@
                     <% end %>
               </td>
               <td class="note_main" align="center">
-                <big><strong><%= safe_join(comment.content.split("\n"),tag(:br)) %></strong></big>
+                <% if comment.long_content != nil %>
+                  <big><strong><%= safe_join(comment.long_content.split("\n"),tag(:br)) %></strong></big>
+                <% end %>
               </td>
             </tr>
 

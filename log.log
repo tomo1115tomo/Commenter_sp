@@ -1,0 +1,11 @@
+D, [2021-09-19T00:14:14.261404 #93972] DEBUG -- : #<ActionController::Parameters {
+"content"=>"", "long_content"=>"", "title"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"2", "expression"=>"1"} permitted: true>
+D, [2021-09-19T00:14:50.919697 #93972] DEBUG -- : #<ActionController::Parameters {"content"=>"", "long_content"=>"", "title"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"2", "expression"=>"1"} permitted: true>
+D, [2021-09-19T00:15:09.840968 #93972] DEBUG -- : #<ActionController::Parameters {"content"=>"", "long_content"=>"", "title"=>"", "senderid"=>"peppe", "sender_id"=>"2", "receiver_id"=>"5", "room_id"=>"13", "emotion"=>"2", "expression"=>"1"} permitted: true>
+D, [2021-09-19T00:15:51.017344 #93972] DEBUG -- : 1
+D, [2021-09-19T00:16:30.893781 #93972] DEBUG -- : true
+D, [2021-09-19T00:17:11.885389 #93972] DEBUG -- : true
+D, [2021-09-19T00:17:21.613433 #93972] DEBUG -- : true
+D, [2021-09-19T00:19:54.644796 #93972] DEBUG -- : true
+D, [2021-09-19T00:21:56.760834 #93972] DEBUG -- : true
+D, [2021-09-19T00:23:50.604880 #93972] DEBUG -- : true

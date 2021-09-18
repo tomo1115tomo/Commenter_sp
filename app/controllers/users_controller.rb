@@ -8,7 +8,6 @@ class UsersController < ApplicationController
     @userss = []
     @users = []
 
-
     friend1 = Friend.where(user_id:current_user.id)
     friend2 = Friend.where(friend_id:current_user.id)
     friend1.each do |friend_id|

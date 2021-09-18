@@ -13,7 +13,13 @@
           if @last_comment != nil
             @last_comment_date = get_comment_date(@last_comment.created_at)
             @last_comment_time = get_comment_time(@last_comment.created_at)
-            @last_comment = @last_comment.content
+
+            if @last_comment.expression == 0 || @last_comment.expression == nil
+              @last_comment = @last_comment.content
+            elsif @last_comment.expression != nil
+              title_length = @last_comment.title.length
+              @last_comment = "件名" + "【" + @last_comment.title + "】" + @last_comment.long_content[0, 40 - title_length] + "...."
+            end
           else
             @last_comment = ""
             @last_comment_date = "'-- / -- / --"
@@ -102,7 +108,7 @@
 
           <tr class="index_row_2nd" id="<%= recent_msg_id %>">
             <td align="right"><%= @last_comment_date + " " + @last_comment_time %></td>
-            <td colspan="3"><%= @last_comment %></td>
+            <td colspan="4"><%= @last_comment %></td>
           </tr>
         <% end %>
 

@@ -30,37 +30,47 @@
   display: none;
 }
 .radio_emotion{
-  height: 75px;
-  width: 75px;
+  height: 65px;
+  width: 65px;
   border-radius: 50%;
 }
 .radio_emotion:hover{
   transform: translate3d(0, 5px, 0);
 }
 .radio + .radio_emotion{
-	border: 3px black solid;
+  filter: grayscale(70%);
+  border: solid transparent 5px;
 }
 .radio:checked + .radio_emotion{
-	border: 3px #ff0000 solid;
+  filter: grayscale(0%);
+  border: groove white 5px;
 }
 
 
 .radio_expression{
-  height: 70px;
-  width: 110px;
-  border-radius: 15px;
+  height: 40px;
+  width: 60px;
+  border-radius: 12px;
 }
 .radio_expression:hover{
   transform: translate3d(0, 5px, 0);
 }
 .radio + .radio_expression{
-	border: 3px black solid;
+  filter: grayscale(70%);
+  border: solid transparent 5px;
 }
 .radio:checked + .radio_expression{
-	border: 3px #ff0000 solid;
+  filter: grayscale(0%);
+  border: groove white 5px;
 }
 
 .submit_button{
-  height:80px;
-  width: 120px;
+  height:70px;
+  width: 80px;
+}
+.submit_button:disabled{
+  filter: grayscale(100%);
+}
+.submit_button:hover{
+  transform: translate3d(8px, 0, 0);
 }
