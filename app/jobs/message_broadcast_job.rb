@@ -3,9 +3,6 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
-    logger = Logger.new('log.log')
-    logger.debug("MessageBroadcastJob")
-    logger.debug(comment)
     create_date = get_comment_date(comment.created_at)
     create_time = get_comment_time(comment.created_at)
     tmp = create_date + " " + create_time

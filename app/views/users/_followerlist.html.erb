@@ -1,7 +1,7 @@
 <div class="" style="float:left">
-  <table>
+  <table id="<%= 'follow_list_' + current_user.id.to_s %>">
     <tbody>
-      <% @users.each_with_index do |friend| %>
+      <% @users.each do |friend| %>
         <%
           @current_user = User.find(current_user.id)
           @judge_result = judge_ff(current_user.id, friend.id)
@@ -21,7 +21,9 @@
           end
         %>
         <% if friend.id != current_user.id && @follow != 0 %>
-          <tr class="index_row_1st">
+
+          <% recent_msg_id = "recent1_" + current_user.id.to_s + "_" + friend.id.to_s %>
+          <tr class="index_row_1st" id="<%= recent_msg_id %>">
             <td class="ff_image">
               <% if @judge_result == 22 %>
                 <%= image_tag "ff#{@judge_result}.png", class:"ff_image" %>
@@ -96,7 +98,7 @@
           <% end %>
           </tr>
 
-          <% recent_msg_id = "recent_" + current_user.id.to_s + "_" + friend.id.to_s %>
+          <% recent_msg_id = "recent2_" + current_user.id.to_s + "_" + friend.id.to_s %>
 
           <tr class="index_row_2nd" id="<%= recent_msg_id %>">
             <td align="right"><%= @last_comment_date + " " + @last_comment_time %></td>

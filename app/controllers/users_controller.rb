@@ -4,7 +4,59 @@ class UsersController < ApplicationController
   skip_before_action :login_required, {only: [:new, :create]}
 
   def index
-    @users = User.all
+    flag = 0
+    @userss = []
+    @users = []
+
+
+    friend1 = Friend.where(user_id:current_user.id)
+    friend2 = Friend.where(friend_id:current_user.id)
+    friend1.each do |friend_id|
+      last_msg_time1 = Comment.where(sender_id:friend_id.friend_id, receiver_id:current_user.id).last
+      last_msg_time2 = Comment.where(sender_id:current_user.id, receiver_id:friend_id.friend_id).last
+      last_msg_time1 = last_msg_time1.created_at unless last_msg_time1.nil?
+      last_msg_time2 = last_msg_time2.created_at unless last_msg_time2.nil?
+      if last_msg_time1 != nil && last_msg_time2 != nil
+        if last_msg_time1 < last_msg_time2
+          last_msg_time1 = last_msg_time2
+        end
+      elsif last_msg_time1 == nil
+        last_msg_time1 = last_msg_time2
+      end
+      if User.find_by(id:friend_id.friend_id)
+        @userss.push([User.find(friend_id.friend_id), last_msg_time1])
+      end
+    end
+    friend2.each do |friend_id|
+      last_msg_time1 = Comment.where(sender_id:friend_id.user_id, receiver_id:current_user.id).last
+      last_msg_time2 = Comment.where(sender_id:current_user.id, receiver_id:friend_id.user_id).last
+      last_msg_time1 = last_msg_time1.created_at unless last_msg_time1.nil?
+      last_msg_time2 = last_msg_time2.created_at unless last_msg_time2.nil?
+      if last_msg_time1 != nil && last_msg_time2 != nil
+        if last_msg_time1 < last_msg_time2
+          last_msg_time1 = last_msg_time2
+        end
+      end
+
+      @userss.each do |user|
+        if user[0] == User.find(friend_id.friend_id)
+          flag = 1
+          if user[1] != nil && user[1] < last_msg_time1
+            user[1] = last_msg_time1
+          end
+        end
+      end
+
+      if flag == 0 && User.find_by(id:friend_id.friend_id)
+        @userss.push([User.find(friend_id.friend_id), last_msg_time1])
+      end
+      flag = 0
+    end
+
+    @userss = @userss.sort {|a, b| a[1].to_s <=> b[1].to_s}.reverse
+    @userss.each do |user|
+      @users.push(user[0])
+    end
   end
 
   def show
@@ -13,7 +65,9 @@ class UsersController < ApplicationController
     else
       @user = nil
     end
+
     @users = User.all
+
   end
 
   # GET /users/new

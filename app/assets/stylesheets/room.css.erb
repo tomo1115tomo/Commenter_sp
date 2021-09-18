@@ -24,68 +24,43 @@
   transform: translate3d(0, 5px, 0);
 }
 
-.expression_1{
-  background-image: url("<%= asset_path('expression_1.png') %>");
-  background-size: cover;
-}
-.expression_2{
-  background-image: url("<%= asset_path('expression_2.png') %>");
-  background-size: cover;
-}
-.expression_3{
-  background-image: url("<%= asset_path('expression_3.png') %>");
-  background-size: cover;
-}
-
-
-.emotion_0{
-  background-image: url("<%= asset_path('emotion_0.png') %>");
-  background-size: cover;
-  height: 70px;
-  width: 70px;
-  display: inline-block;
-}
-.emotion_1{
-  background-image: url("<%= asset_path('emotion_1.png') %>");
-  background-size: cover;
-  height: 70px;
-  width: 70px;
-}
-.emotion_2{
-  background-image: url("<%= asset_path('emotion_2.png') %>");
-  background-size: cover;
-  height: 70px;
-  width: 70px;
-}
-.emotion_3{
-  background-image: url("<%= asset_path('emotion_3.png') %>");
-  background-size: cover;
-  height: 70px;
-  width: 70px;
-}
-.emotion_4{
-  background-image: url("<%= asset_path('emotion_4.png') %>");
-  background-size: cover;
-  height: 70px;
-  width: 70px;
-}
 
 
 .radio{
   display: none;
 }
-
-.radio_image{
-
-    height: 70px;
-    width: 70px;
+.radio_emotion{
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
 }
-
-.radio + .radio_image{
+.radio_emotion:hover{
+  transform: translate3d(0, 5px, 0);
+}
+.radio + .radio_emotion{
 	border: 3px black solid;
 }
-
-.radio:checked + .radio_image{
-
+.radio:checked + .radio_emotion{
 	border: 3px #ff0000 solid;
+}
+
+
+.radio_expression{
+  height: 70px;
+  width: 110px;
+  border-radius: 15px;
+}
+.radio_expression:hover{
+  transform: translate3d(0, 5px, 0);
+}
+.radio + .radio_expression{
+	border: 3px black solid;
+}
+.radio:checked + .radio_expression{
+	border: 3px #ff0000 solid;
+}
+
+.submit_button{
+  height:80px;
+  width: 120px;
 }

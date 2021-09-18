@@ -15,9 +15,7 @@
       <table align="right" style="border-collapse:collapse;">
         <tr>
           <td rowspan="3">
-              <% unless emotion.nil? %>
-                <%= image_tag emotion + ".png", class:"emotion_icons" %>
-              <% end %>
+              <% unless emotion.nil? %><%= image_tag emotion + ".png", class:"emotion_icons" %><% end %>
           </td>
           <td class="<%= emotion_top %> msg_top" valign="center" align="right">
             <%= "　From " %><strong><%= sender.userid + " 　" %></strong>
@@ -42,7 +40,6 @@
 
         <tr>
           <td align="left"><small class="time_date"><%= submitted_date %></small></td>
-          <td></td>
         </tr>
       </table>
 
@@ -52,14 +49,11 @@
           <td class="" align="center">
             <small class="time_time"><strong><%= submitted_time %></strong></small>
           </td>
-          <td class="<%= emotion_top %> msg_top" valign="center">
-            <%= "From " %><strong><%= sender.userid %></strong>
+          <td class="<%= emotion_top %> msg_top" valign="center" align="left">
+            <%= "　From " %><strong><%= sender.userid + " 　" %></strong>
           </td>
-
           <td rowspan="3">
-              <% unless emotion.nil? %>
-                <%= image_tag emotion + ".png", class:"emotion_icons" %>
-              <% end %>
+              <% unless emotion.nil? %><%= image_tag emotion + ".png", class:"emotion_icons" %><% end %>
           </td>
         </tr>
 
@@ -138,7 +132,6 @@
                   <% else %>
                     <%= image_tag "新着_デフォルト.png", :class => "roomnew_icons" %>
                   <% end %>
-
                   <strong><%= User.find(comment.sender_id).userid %></strong>
             </td>
           </tr>

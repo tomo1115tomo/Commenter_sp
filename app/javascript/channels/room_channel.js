@@ -20,34 +20,29 @@ const appRoom = consumer.subscriptions.create("RoomChannel", {
     }
 
     if(location.pathname == '/users'){
-      var recent_msg_id = "recent_" + String(data['receiver_id']) + "_" + String(data['sender_id']);
-      var recent_msg_area = document.getElementById(recent_msg_id);
+      var recent1_msg_id = "recent1_" + String(data['receiver_id']) + "_" + String(data['sender_id']);
+      var recent1_msg_area = document.getElementById(recent1_msg_id);
+      var recent2_msg_id = "recent2_" + String(data['receiver_id']) + "_" + String(data['sender_id']);
+      var recent2_msg_area = document.getElementById(recent2_msg_id);
+      var follow_list_id = "follow_list_" + String(data['receiver_id'])
+      var follow_list_area = document.getElementById(follow_list_id)
 
       var msg_content = '<td align="right" style="color:white">' + data['created_at'] + '</td>' + '<td colspan="3" style="color:white">' + data['content'] + '</td>';
-      recent_msg_area.innerHTML = msg_content;
+      recent2_msg_area.innerHTML = msg_content;
+
+      recent1_msg_area.remove();
+      recent2_msg_area.remove();
+      follow_list_area.prepend(recent2_msg_area);
+      follow_list_area.prepend(recent1_msg_area);
     }
+    else{
+      const room_id = "comments" + String(data['room_id']) + "_" + String(user1) + "_" + String(user2);
+      const comments = document.getElementById(room_id);
+      const msg_area = document.getElementById('msg_box');
 
-
-    const room_id = "comments" + String(data['room_id']) + "_" + String(user1) + "_" + String(user2);
-    const comments = document.getElementById(room_id);
-
-    if(comments != null){
       comments.insertAdjacentHTML('beforeend', data['comment']);
-    }
-
-    var current_user_id = document.getElementById('current_user_variable').value;
-    if(current_user_id == data['receiver_id']){
-      
-    }
-    else if(current_user_id == data['sender_id']){
-
-    }
-
-    const msg_area = document.getElementById('msg_box');
-    if(msg_area != null){
       msg_area.scrollTop = msg_area.scrollHeight;
     }
-
   },
 
   speak: function() {

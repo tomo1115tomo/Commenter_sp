@@ -4,8 +4,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-    logger = Logger.new('log.log')
-    logger.debug(comments_params)
     @comment = Comment.create(comments_params)
     @comment.save
 

@@ -43,11 +43,6 @@
     <center>
       <div class="">
         <%= form_with(model: Comment.new(), id:"form" ) do |form| %>
-          <%= form.hidden_field :senderid, :value => senderid, id:"form_senderid" %>
-          <%= form.hidden_field :sender_id, :value => sender_id, id:"form_sender_id" %>
-          <%= form.hidden_field :receiver_id, :value => receiver_id, id:"form_receiver_id" %>
-          <%= form.hidden_field :room_id, :value => roomid, id:"form_room_id" %>
-
           <table align="center">
             <tr>
               <td colspan="3"><%= form.text_field :title, id:"comment_form_title", class: "comment_form_title", data: { behavior: 'room_speaker'}, placeholder: "ここに件名を入力..." %></td>
@@ -56,30 +51,16 @@
               <td colspan="3"><%= form.text_area :content, id:"comment_form_long", class: "comment_form_long", data: { behavior: 'room_speaker'}, placeholder: "ここに本文を入力..." %></td>
             </tr>
             <tr>
-              <td align="center">
-                <%= button_tag type: :submit, class: "", value:"expression_1" do %>
-                  <%= image_tag "expression_1.png", class:"expression_1 comment_form_long_btn", name:"expression_1" %>
-                <% end %>
-              </td>
-              <td align="center">
-                <%= button_tag type: :submit, class: "", value:"expression_2" do %>
-                  <%= image_tag "expression_2.png", class:"expression_2 comment_form_long_btn", name:"expression_2" %>
-                <% end %>
-              </td>
-              <td align="center">
-                <%= button_tag type: :submit, class: "", value:"expression_3" do %>
-                  <%= image_tag "expression_3.png", class:"expression_3 comment_form_long_btn", name:"expression_3" %>
-                <% end %>
-              </td>
+              <td align="center"><label><%= form.radio_button :expression, 1, class:"radio" %><%= image_tag "expression_1.png", class:"radio_expression" %></label></td>
+              <td align="center"><label><%= form.radio_button :expression, 2, class:"radio" %><%= image_tag "expression_2.png", class:"radio_expression" %></label></td>
+              <td align="center"><label><%= form.radio_button :expression, 3, class:"radio" %><%= image_tag "expression_3.png", class:"radio_expression" %></label></td>
             </tr>
           </table>
-        <% end %>
       </div>
     </center>
   </div>
 
   <div name="msg_form">
-    <%= form_with(model: Comment.new(), id:"form" ) do |form| %>
       <%= form.hidden_field :senderid, :value => senderid, id:"form_senderid" %>
       <%= form.hidden_field :sender_id, :value => sender_id, id:"form_sender_id" %>
       <%= form.hidden_field :receiver_id, :value => receiver_id, id:"form_receiver_id" %>
@@ -88,12 +69,11 @@
       <table align="center">
         <tr>
           <td><%= form.text_area :content, id:"comment_form", class: "comment_form", data: { behavior: 'room_speaker'}, placeholder: "ここにメッセージを入力..." %></td>
-          <td><label><%= form.radio_button :emotion, 0, class:"radio" %><%= image_tag "emotion_0.png", class:"radio_image" %></label></td>
-          <td><label><%= form.radio_button :emotion, 1, class:"radio" %><%= image_tag "emotion_1.png", class:"radio_image" %></label></td>
-          <td><label><%= form.radio_button :emotion, 3, class:"radio" %><%= image_tag "emotion_3.png", class:"radio_image" %></label></td>
-          <td><label><%= form.radio_button :emotion, 4, class:"radio" %><%= image_tag "emotion_4.png", class:"radio_image" %></label></td>
-
-          <td><%= form.submit %></td>
+          <td><label><%= form.radio_button :emotion, 0, class:"radio" %><%= image_tag "emotion_0.png", class:"radio_emotion" %></label></td>
+          <td><label><%= form.radio_button :emotion, 1, class:"radio" %><%= image_tag "emotion_1.png", class:"radio_emotion" %></label></td>
+          <td><label><%= form.radio_button :emotion, 3, class:"radio" %><%= image_tag "emotion_3.png", class:"radio_emotion" %></label></td>
+          <td><label><%= form.radio_button :emotion, 4, class:"radio" %><%= image_tag "emotion_4.png", class:"radio_emotion" %></label></td>
+          <td><%= image_submit_tag "submit.png", class:"submit_button" %></td>
         </tr>
       </table>
     <% end %>
